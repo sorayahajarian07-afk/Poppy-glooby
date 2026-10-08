@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>گلوبی و پاپی</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@500;800&display=swap" rel="stylesheet">
+<style>
+:root{--g:#3ecf6e;--gd:#1f8f47;--r:#f2506b;--rd:#c22f4a;--p:#ff8fc7;--pd:#e0559f;--b:#4da3ff;--bd:#2a6fd1;--y:#ffd93d;--yd:#e0b400;--v:#9b6bff;--vd:#6a3fd6;--ink:#3b1f7a;--bg:#f6f0ff;--card:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#f3ebff;--bg:#2a1658;--card:#3b2380}}
+:root[data-theme="dark"]{--ink:#f3ebff;--bg:#2a1658;--card:#3b2380}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{height:100%;margin:0;background:var(--bg);color:var(--ink);font-family:Vazirmatn,Tahoma,sans-serif;font-weight:500}
+*{box-sizing:border-box}
+#wrap{min-height:100%;max-width:520px;margin:0 auto}
+#bar{display:none;position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--v);border-bottom:4px solid #3b1f7a;padding:8px 12px;align-items:center;justify-content:space-between;color:#fff;font-weight:800}
+.ib{border:3px solid #3b1f7a;background:var(--y);color:#3b1f7a;border-radius:14px;font:800 .95rem Vazirmatn,Tahoma;padding:6px 14px;cursor:pointer}
+.pat{height:28px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='28'%3E%3Cpath d='M14 4c8 0 12 8 8 15-3 5-10 6-13 2 4 0 6-3 5-6-3 1-7-1-7-5 0-3 3-6 7-6z' fill='%239b6bff'/%3E%3Ccircle cx='42' cy='14' r='6' fill='%23ff8fc7'/%3E%3Ccircle cx='42' cy='14' r='2.5' fill='%23ffd93d'/%3E%3C/svg%3E") repeat-x center}
+.s{display:none;flex-direction:column;align-items:center;gap:14px;padding:18px 16px 28px;text-align:center}
+.s.on{display:flex}
+.btn{border:3px solid #3b1f7a;border-radius:22px;background:var(--g);color:#fff;font:800 1.25rem Vazirmatn,Tahoma;padding:14px 34px;box-shadow:0 5px 0 var(--gd);cursor:pointer;text-shadow:0 2px 0 #1f8f47}
+.btn:active,.lv:active,.w:active .orb{transform:translateY(4px)}
+.btn:focus-visible,.ib:focus-visible,.av:focus-visible,.gr:focus-visible,.w:focus-visible,.lv:focus-visible,input:focus-visible{outline:4px solid var(--y);outline-offset:2px}
+.btn.alt{background:var(--p);box-shadow:0 5px 0 var(--pd);text-shadow:0 2px 0 #e0559f}
+.lnk{background:none;border:0;color:var(--ink);font:800 1rem Vazirmatn,Tahoma;text-decoration:underline;cursor:pointer}
+h1{margin:0;font-size:2.6rem;line-height:1.2;font-weight:800;-webkit-text-stroke:2px #3b1f7a;paint-order:stroke fill}
+h1 .a{color:var(--g)}h1 .c{color:var(--p)}
+h2{margin:0;font-size:1.4rem;font-weight:800}
+.duo{display:flex;align-items:flex-end;gap:6px;width:100%;justify-content:center}
+.ch{width:150px;height:150px}.ch svg{width:100%;height:100%}
+.bob{animation:bob 1.4s ease-in-out infinite}.bob.d{animation-delay:.5s}
+.happy,.idle{animation:bob 1.4s ease-in-out infinite}.sad{animation:shake .5s ease-in-out 3}.think{animation:sway 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-10px)}}
+@keyframes shake{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+@keyframes sway{50%{transform:rotate(5deg)}}
+.shk{animation:shake .4s 1}
+.bub{background:#fff;color:#3b1f7a;border:3px solid #3b1f7a;border-radius:20px;padding:10px 16px;font-weight:800;max-width:300px}
+input#nm{width:100%;max-width:300px;border:3px solid #3b1f7a;border-radius:18px;background:#fff;color:#3b1f7a;font:800 1.2rem Vazirmatn,Tahoma;padding:12px;text-align:center}
+.row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.av{border:4px solid transparent;border-radius:50%;background:var(--card);padding:2px;cursor:pointer}
+.av.sel{border-color:var(--r);transform:scale(1.12)}
+.gr{border:3px solid #3b1f7a;border-radius:16px;background:var(--card);color:var(--ink);font:800 1.1rem Vazirmatn,Tahoma;padding:10px 18px;cursor:pointer}
+.gr.sel{background:var(--b);color:#fff}
+.hi{display:flex;align-items:center;gap:8px;font-weight:800;font-size:1.15rem}
+#mp{display:flex;flex-direction:column;gap:18px;width:100%;background:linear-gradient(var(--v),var(--v)) center/4px 100% no-repeat;padding:6px 0}
+.w{background:none;border:0;display:flex;flex-direction:column;align-items:center;gap:4px;width:150px;cursor:pointer;color:var(--ink);font-family:inherit}
+.w.r{align-self:flex-start;margin-inline-start:8%}.w.l{align-self:flex-end;margin-inline-end:8%}
+.orb{width:104px;height:104px;border-radius:50%;border:4px solid #3b1f7a;display:flex;align-items:center;justify-content:center;font-size:3.2rem;font-weight:800;color:#fff;text-shadow:2px 2px 0 #3b1f7a,-1px -1px 0 #3b1f7a}
+.wn{font-weight:800;font-size:1.05rem;background:var(--card);border:3px solid #3b1f7a;border-radius:12px;padding:2px 10px}
+.w small{font-weight:500}
+#wh{border:3px solid #3b1f7a;border-radius:18px;padding:10px 30px;color:#fff;font-size:1.6rem;font-weight:800;text-shadow:2px 2px 0 #3b1f7a}
+#lv{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;width:100%}
+.lv{border:3px solid #3b1f7a;border-radius:16px;color:#fff;font:800 1.3rem Vazirmatn,Tahoma;padding:14px 0;cursor:pointer;display:flex;flex-direction:column;align-items:center;text-shadow:1px 1px 0 #3b1f7a}
+.lv.lock{background:var(--card);color:var(--ink);opacity:.55;text-shadow:none}
+.lv small{font-size:.7rem}
+#game .ch{width:110px;height:110px}
+#gb{width:100%;display:flex;flex-direction:column;align-items:center;gap:14px}
+#gtop{width:100%;display:flex;flex-direction:column;gap:6px;font-weight:800}
+.trk{display:flex;align-items:center;gap:8px}.trk span{width:52px;text-align:start}
+.trk div{flex:1;height:16px;border:3px solid #3b1f7a;border-radius:10px;background:var(--card);overflow:hidden}
+.trk i{display:block;height:100%;width:0;transition:width .4s}
+.tm{height:10px;border:2px solid #3b1f7a;border-radius:8px;overflow:hidden;background:var(--card)}.tm i{display:block;height:100%;width:100%;background:var(--y)}
+.qq,.op,.bb,.mc span{unicode-bidi:plaintext}
+.qq{background:var(--card);border:3px solid #3b1f7a;border-radius:18px;padding:14px;font-size:1.3rem;font-weight:800;width:100%}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%}
+.op{border:3px solid #3b1f7a;border-radius:16px;background:var(--b);color:#fff;font:800 1.15rem Vazirmatn,Tahoma;padding:12px;box-shadow:0 4px 0 var(--bd);cursor:pointer;text-shadow:1px 1px 0 #3b1f7a}
+.op.good,.bb.good{background:var(--g)}.op.no,.bb.no{background:var(--r);opacity:.6}
+.bubs{display:grid;grid-template-columns:1fr 1fr;gap:16px;width:100%}
+.bb{aspect-ratio:1;border-radius:50%;border:4px solid #3b1f7a;background:var(--p);color:#fff;font:800 1.7rem Vazirmatn,Tahoma;text-shadow:2px 2px 0 #3b1f7a;cursor:pointer;animation:flt 2.4s ease-in-out infinite}
+.bb:nth-child(2n){animation-delay:.6s;background:var(--b)}.bb:nth-child(3n){background:var(--v)}
+@keyframes flt{50%{transform:translateY(-12px)}}
+.bb.good{animation:pop .5s forwards}@keyframes pop{to{transform:scale(1.5);opacity:0}}
+.mg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%}
+.mc{aspect-ratio:1;border:3px solid #3b1f7a;border-radius:14px;background:var(--v);font:800 1rem Vazirmatn,Tahoma;cursor:pointer;color:#fff;padding:2px}
+.mc span{display:none}.mc.up span{display:inline}.mc:not(.up)::before{content:'؟';font-size:1.8rem}
+.mc.up{background:#fff;color:#3b1f7a}.mc.dn{background:var(--g);color:#fff}
+.ans{min-height:64px;display:flex;gap:6px;flex-wrap:wrap;justify-content:center;align-items:center;border:3px dashed var(--v);border-radius:16px;padding:8px;width:100%}
+.lt{border:3px solid #3b1f7a;border-radius:14px;background:var(--y);color:#3b1f7a;font:800 1.6rem Vazirmatn,Tahoma;width:52px;height:56px;cursor:pointer;box-shadow:0 4px 0 var(--yd)}.lt.a{background:var(--p);box-shadow:0 4px 0 var(--pd)}
+.stars{font-size:3.4rem;color:var(--y);-webkit-text-stroke:2px #3b1f7a;paint-order:stroke fill;letter-spacing:6px}
+.pz{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;background:#3b1f7a;border:3px solid #3b1f7a;border-radius:12px;width:100%;max-width:300px;direction:ltr}
+.pz svg,.pz div{width:100%;aspect-ratio:1;display:block;cursor:pointer;background:#d9c9ff}
+.coin{background:var(--y);color:#3b1f7a;border:3px solid #3b1f7a;border-radius:12px;padding:0 10px;font-weight:800}
+.cg{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;width:100%}
+.cd{background:var(--card);border:3px solid #3b1f7a;border-radius:18px;padding:10px;display:flex;flex-direction:column;align-items:center;gap:6px;font-weight:800}
+.cd.lk{opacity:.4}.cd .ch{width:110px;height:110px}
+.bossc{animation:bob 1s ease-in-out infinite}
+.ant{transform-origin:80px 36px;animation:wig 2.4s ease-in-out infinite}
+.ab{animation:bob2 1.6s ease-in-out infinite}.ab.b2{animation-delay:.4s}
+.body{transform-origin:80px 148px;animation:sq 2.2s ease-in-out infinite}
+.eye{animation:blink 4s infinite}
+.bob .arm.l,.happy .arm.l{animation:wave .7s ease-in-out infinite}
+.lf{animation:wave 2s ease-in-out infinite}.lf.r{animation-direction:reverse}
+.pet{transform-origin:80px 60px;animation:psw 3.2s ease-in-out infinite}
+.tear{animation:tear 1.4s infinite}.sp{animation:tw 1.4s infinite}
+.fl{transform-box:fill-box;transform-origin:center;animation:flap .45s ease-in-out infinite}
+@keyframes wig{50%{transform:rotate(7deg)}}@keyframes bob2{50%{transform:translateY(-3px)}}
+@keyframes sq{50%{transform:scale(1.03,.96)}}@keyframes blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+@keyframes wave{50%{transform:rotate(-22deg)}}@keyframes psw{50%{transform:rotate(5deg)}}
+@keyframes tear{0%{transform:translateY(-4px);opacity:0}50%{opacity:1}100%{transform:translateY(8px);opacity:0}}
+@keyframes tw{50%{opacity:.25}}@keyframes flap{50%{transform:scaleX(.5)}}
+#wrap{padding-bottom:84px}
+#nav{display:none;position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:520px;z-index:6;background:var(--v);border-top:4px solid #3b1f7a;padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px));gap:6px}
+.nb{flex:1;border:3px solid #3b1f7a;border-radius:14px;background:var(--y);color:#3b1f7a;font:800 .8rem Vazirmatn,Tahoma;padding:8px 2px;cursor:pointer}
+.tabs{display:flex;gap:8px}
+.sb{border:3px solid #3b1f7a;border-radius:12px;background:var(--g);color:#fff;font:800 .85rem Vazirmatn,Tahoma;padding:6px 8px;cursor:pointer;text-shadow:1px 1px 0 #3b1f7a}.sb.y{background:var(--y);color:#3b1f7a;text-shadow:none}
+.stage{position:relative;width:260px;height:260px;margin:30px auto 130px}
+.gg{position:absolute;inset:0;transform-origin:50% 90%;animation:grow 3.6s ease-in forwards,fo 3.6s forwards}
+.gg svg{width:100%;height:100%}.gg.pu{opacity:0;animation:grow 3.6s ease-in forwards,fi 3.6s forwards}
+.fd{position:absolute;left:117px;top:160px;width:26px;height:26px;border-radius:50%;border:3px solid #3b1f7a;opacity:0;animation:eatf .7s ease-in forwards}
+@keyframes grow{28%{transform:scale(1.15)}50%{transform:scale(1.35)}72%{transform:scale(1.6)}94%,100%{transform:scale(1.85)}}
+@keyframes fo{0%,70%{opacity:1}100%{opacity:0}}@keyframes fi{0%,70%{opacity:0}100%{opacity:1}}
+@keyframes eatf{0%{opacity:1;transform:translate(var(--x),-130px)}95%{opacity:1}100%{opacity:0;transform:translate(0,0) scale(.3)}}
+.w.lk .orb{opacity:.35}.lv.bs{border-color:#f2506b;border-width:5px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div id="wrap">
+<div id="bar"><button class="ib" id="back">بازگشت</button><span id="ttl"></span><button class="ib" id="mute">صدا</button></div>
+<div class="pat"></div>
+
+<section class="s on" id="splash">
+  <h1><span class="a">گلوبی</span> و <span class="c">پاپی</span></h1>
+  <h2>ماجراجویی یادگیری</h2>
+  <div class="duo"><div class="ch bob" id="s1"></div><div class="ch bob d" id="s2"></div></div>
+  <div class="bub">سلام! بیا با هم بازی کنیم و یاد بگیریم!</div>
+  <button class="btn" id="go">شروع بازی</button>
+  <button class="lnk" id="new" hidden>پروفایل جدید</button>
+</section>
+
+<section class="s" id="profile">
+  <div class="ch" id="pch"></div>
+  <div class="bub" id="pbub">من پاپی‌ام! اسمت چیه؟</div>
+  <input id="nm" maxlength="12" placeholder="اسمتو بنویس" autocomplete="off">
+  <h2>یه آواتار انتخاب کن</h2>
+  <div class="row" id="avs"></div>
+  <h2>پایه‌ات کدومه؟</h2>
+  <div class="row" id="grs"></div>
+  <button class="btn" id="ok">بریم!</button>
+</section>
+
+<section class="s" id="map">
+  <div class="hi" id="hi"></div>
+  <div id="m1" hidden></div>
+  <div id="mp"></div>
+</section>
+
+<section class="s" id="world">
+  <div id="wh"></div>
+  <div class="duo"><div class="ch" id="wc"></div><div class="bub" id="wsay"></div></div>
+  <div id="lv"></div>
+</section>
+
+<section class="s" id="game">
+  <div id="gtop"></div>
+  <div class="duo"><div class="ch" id="gc"></div><div class="bub" id="gs"></div></div>
+  <div id="gb"></div>
+</section>
+<section class="s" id="stk"><div class="cg" id="sg"></div></section>
+<section class="s" id="shop"><div id="shp" style="width:100%;display:flex;flex-direction:column;align-items:center;gap:12px"></div></section>
+<section class="s" id="par"><div id="prt" style="width:100%;display:flex;flex-direction:column;gap:10px"></div></section>
+</div>
+
+<nav id="nav"><button class="nb" id="hm">نقشه</button><button class="nb" id="dl">چالش روزانه</button><button class="nb" id="bk">استیکرها</button><button class="nb" id="sh">فروشگاه</button><button class="nb" id="pa">والدین</button></nav>
+<script>
+const $=i=>document.getElementById(i),O='#3b1f7a',fa=n=>String(n).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
+const mem={},store={get(k){try{return localStorage.getItem(k)}catch(e){return mem[k]||null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){mem[k]=v}}};
+let S={name:'',av:0,grade:4,mute:false};
+try{Object.assign(S,JSON.parse(store.get('gp')||'{}'))}catch(e){}
+const save=()=>store.set('gp',JSON.stringify(S));
+const AV=['#3ecf6e','#f2506b','#ff8fc7','#4da3ff','#ffd93d','#9b6bff'],GR={4:'چهارم',5:'پنجم',6:'ششم'};
+const W=[{n:'فارسی',c:'--r',d:'--rd',s:'ف'},{n:'ریاضی',c:'--b',d:'--bd',s:'+'},{n:'علوم',c:'--g',d:'--gd',s:'ع'},{n:'مطالعات اجتماعی',c:'--y',d:'--yd',s:'م'},{n:'هنر و فرهنگ',c:'--v',d:'--vd',s:'ه'}];
+let wi=0,ctx;
+
+/* sounds */
+function snd(t){if(S.mute)return;try{ctx=ctx||new(window.AudioContext||window.webkitAudioContext)();const q={click:[[660,.06]],ok:[[523,.1],[659,.1],[784,.18]],bad:[[300,.15],[220,.25]],win:[[523,.1],[659,.1],[784,.1],[1047,.25]]}[t];let T=ctx.currentTime;q.forEach(([f,d])=>{const o=ctx.createOscillator(),g=ctx.createGain();o.type='triangle';o.frequency.value=f;g.gain.setValueAtTime(.15,T);g.gain.exponentialRampToValueAtTime(.001,T+d);o.connect(g);g.connect(ctx.destination);o.start(T);o.stop(T+d);T+=d})}catch(e){}}
+
+/* characters: poses idle, happy, sad, think */
+function gl(p){
+  const u=p==='think'?[4,-4]:p==='sad'?[0,3]:[0,0],k=`stroke="${O}" stroke-width="4"`;
+  const m=p==='happy'?`<path d="M56 100Q80 136 104 100Z" fill="#f2506b" ${k} stroke-linejoin="round"/><path d="M68 114Q80 106 92 114Q80 124 68 114Z" fill="#ff8fc7"/>`
+   :p==='sad'?`<path d="M60 120Q80 100 100 120" fill="none" ${k} stroke-width="5" stroke-linecap="round"/><path d="M106 92q-6 10 0 14q6-4 0-14z" fill="#4da3ff"/>`
+   :p==='think'?`<circle cx="86" cy="112" r="6" fill="${O}"/><circle cx="132" cy="28" r="14" fill="#ffd93d" ${k}/><text x="132" y="35" font-size="20" font-weight="800" text-anchor="middle" fill="${O}">?</text>`
+   :`<path d="M58 104Q80 124 102 104" fill="none" ${k} stroke-width="5" stroke-linecap="round"/>`;
+  return `<svg viewBox="0 0 160 160"><path d="M62 34L54 14M98 34L106 14" ${k} stroke-width="5" stroke-linecap="round"/><circle cx="54" cy="12" r="8" fill="#ffd93d" ${k}/><circle cx="106" cy="12" r="8" fill="#ffd93d" ${k}/><path d="M20 120C10 70 40 30 80 30s70 40 60 90c-2 20-20 28-60 28s-58-8-60-28z" fill="#3ecf6e" ${k} stroke-width="5"/><circle cx="36" cy="112" r="7" fill="#1f8f47"/><circle cx="126" cy="120" r="9" fill="#1f8f47"/><circle cx="62" cy="74" r="15" fill="#fff" ${k}/><circle cx="98" cy="74" r="15" fill="#fff" ${k}/><circle cx="${62+u[0]}" cy="${74+u[1]}" r="6" fill="${O}"/><circle cx="${98+u[0]}" cy="${74+u[1]}" r="6" fill="${O}"/>${m}</svg>`}
+function pp(p){
+  const k=`stroke="${O}" stroke-width="4"`;let pe='';
+  for(let i=0;i<8;i++)pe+=`<ellipse cx="80" cy="28" rx="14" ry="22" transform="rotate(${i*45} 80 60)" fill="#ff8fc7" ${k}/>`;
+  const e=p==='happy'?`<path d="M64 58q7-9 14 0M82 58q7-9 14 0" fill="none" ${k} stroke-linecap="round"/>`:`<circle cx="71" cy="${p==='sad'?60:57}" r="4" fill="${O}"/><circle cx="89" cy="${p==='sad'?60:57}" r="4" fill="${O}"/>`;
+  const m=p==='happy'?`<path d="M68 70Q80 84 92 70Z" fill="#f2506b" stroke="${O}" stroke-width="3" stroke-linejoin="round"/>`
+   :p==='sad'?`<path d="M70 77Q80 67 90 77" fill="none" ${k} stroke-linecap="round"/>`
+   :p==='think'?`<circle cx="84" cy="72" r="4" fill="${O}"/><circle cx="140" cy="18" r="13" fill="#ffd93d" ${k}/><text x="140" y="25" font-size="19" font-weight="800" text-anchor="middle" fill="${O}">?</text>`
+   :`<path d="M70 70Q80 80 90 70" fill="none" ${k} stroke-linecap="round"/>`;
+  return `<svg viewBox="0 0 160 160"><path d="M80 108V156" stroke="#1f8f47" stroke-width="9" stroke-linecap="round"/><path d="M80 142Q50 122 38 138Q58 154 80 142Z" fill="#3ecf6e" ${k}/><path d="M80 130Q110 110 122 126Q102 142 80 130Z" fill="#3ecf6e" ${k}/>${pe}<circle cx="80" cy="60" r="26" fill="#ffd93d" ${k}/><circle cx="62" cy="68" r="5" fill="#ff8fc7"/><circle cx="98" cy="68" r="5" fill="#ff8fc7"/>${e}${m}</svg>`}
+const av=(c,s=64)=>`<svg viewBox="0 0 64 64" width="${s}" height="${s}"><circle cx="32" cy="32" r="28" fill="${c}" stroke="${O}" stroke-width="4"/><circle cx="23" cy="27" r="4" fill="${O}"/><circle cx="41" cy="27" r="4" fill="${O}"/><path d="M22 38Q32 48 42 38" fill="none" stroke="${O}" stroke-width="4" stroke-linecap="round"/></svg>`;
+
+/* navigation */
+const BACK={profile:'splash',map:'profile',world:'map'};let cur='splash';
+function go(id){cur=id;document.querySelectorAll('.s').forEach(s=>s.classList.toggle('on',s.id===id));$('bar').style.display=id==='splash'?'none':'flex';$('ttl').textContent={profile:'پروفایل',map:'نقشهٔ دنیاها',world:W[wi].n}[id]||'';window.scrollTo(0,0);if(id==='map')drawMap();if(id==='world')drawWorld();if(id==='profile')drawProfile()}
+function drawProfile(){$('nm').value=S.name;$('avs').innerHTML=AV.map((c,i)=>`<button class="av ${i===S.av?'sel':''}" data-i="${i}" aria-label="آواتار ${fa(i+1)}">${av(c)}</button>`).join('');$('grs').innerHTML=[4,5,6].map(g=>`<button class="gr ${g===S.grade?'sel':''}" data-g="${g}">${GR[g]}</button>`).join('')}
+function drawMap(){$('hi').innerHTML=`${av(AV[S.av],44)}<span>سلام ${S.name}! پایهٔ ${GR[S.grade]}</span>`;$('m1').innerHTML=pp('happy');$('mp').innerHTML=W.map((w,i)=>`<button class="w ${i%2?'l':'r'}" data-i="${i}"><span class="orb" style="background:var(${w.c});box-shadow:0 7px 0 var(${w.d})">${w.s}</span><span class="wn">${w.n}</span><small>${fa(0)} از ${fa(30)} ستاره</small></button>`).join('')}
+function say(t,p){$('wc').className='ch '+p;$('wc').innerHTML=p==='think'||p==='sad'?gl(p):pp(p);$('wsay').textContent=t}
+function drawWorld(){const w=W[wi];$('wh').style.background=`var(${w.c})`;$('wh').textContent=w.n;$('lv').innerHTML=Array.from({length:10},(_,i)=>`<button class="lv ${i?'lock':''}" data-i="${i}" ${i?'':`style="background:var(${w.c});box-shadow:0 4px 0 var(${w.d})"`}>${fa(i+1)}${i===9?'<small>باس</small>':''}</button>`).join('');say('بیا شروع کنیم، '+S.name+'!','happy')}
+
+/* events */
+document.addEventListener('click',()=>{try{ctx=ctx||new(window.AudioContext||window.webkitAudioContext)();ctx.resume()}catch(e){}},{once:true});
+$('go').onclick=()=>{snd('click');go(S.name?'map':'profile')};
+$('new').onclick=()=>{snd('click');go('profile')};
+$('back').onclick=()=>{snd('click');go(BACK[cur]||'splash')};
+const upd=()=>{$('mute').textContent=S.mute?'بی‌صدا':'صدا'};
+$('mute').onclick=()=>{S.mute=!S.mute;save();upd();snd('click')};
+$('nm').oninput=()=>{S.name=$('nm').value.trim()};
+$('avs').onclick=e=>{const b=e.target.closest('button');if(!b)return;S.av=+b.dataset.i;snd('click');drawProfile()};
+$('grs').onclick=e=>{const b=e.target.closest('button');if(!b)return;S.grade=+b.dataset.g;snd('click');drawProfile()};
+$('ok').onclick=()=>{S.name=$('nm').value.trim();if(!S.name){snd('bad');$('pbub').textContent='اول اسمتو بنویس تا بشناسمت!';$('nm').classList.add('shk');setTimeout(()=>$('nm').classList.remove('shk'),450);return}save();snd('win');go('map')};
+$('mp').onclick=e=>{const b=e.target.closest('.w');if(!b)return;wi=+b.dataset.i;snd('click');go('world')};
+$('lv').onclick=e=>{const b=e.target.closest('.lv');if(!b)return;if(b.dataset.i==='0'){snd('ok');say('مرحلهٔ اول توی فاز ۲ ساخته می‌شه. کمی صبر کن!','think')}else{snd('bad');say('این مرحله هنوز قفله!','sad')}};
+
+/* phase 2 */
+const R=(a,b)=>a+Math.floor(Math.random()*(b-a+1)),shuf=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=R(0,i);[a[i],a[j]]=[a[j],a[i]]}return a},f=n=>fa(String(n).replace('.','٫'));
+const PT=['quiz','mem','word','quiz','mem','word','quiz','mem','word'],MT=['bub','quiz','mem','bub','quiz','mem','bub','quiz','mem'];
+const PQ={4:[['مترادف «زیبا» کدام است؟','قشنگ',['زشت','بزرگ','تند'],'مترادف یعنی هم‌معنی!'],['متضاد «بلند» کدام است؟','کوتاه',['دراز','زیاد','سبز'],'متضاد یعنی ضد و عکس.'],['کدام کلمه درست نوشته شده؟','ذرت',['زرت','ضرت','ظرت'],'این کلمه با «ذ» نوشته می‌شود.'],['توانا بود هر که ... بود','دانا',['نادان','ضعیف','تنبل'],'شعر فردوسی دربارهٔ ارزش دانایی است.'],['بنی‌آدم اعضای ... اند','یکدیگر',['دشمن','مدرسه','پرنده'],'شعر سعدی دربارهٔ مهربانی انسان‌هاست.'],['در جملهٔ «علی کتاب خواند» فعل کدام است؟','خواند',['علی','کتاب','جمله'],'فعل کاری است که انجام می‌شود.']],
+5:[['متضاد «آغاز» کدام است؟','پایان',['شروع','آرام','خانه'],'ضدِ شروع چیست؟'],['مترادف «دانا» کدام است؟','آگاه',['نادان','تنبل','کوچک'],'دانا کسی است که می‌داند.'],['در «گل قشنگ» صفت کدام است؟','قشنگ',['گل','دوید','مدرسه'],'صفت ویژگی را می‌گوید.'],['ز دانش دل پیر ... بود','برنا',['پیر','تنگ','سرد'],'برنا یعنی جوان.'],['مترادف «سخن» کدام است؟','حرف',['سکوت','راه','باغ'],'سخن گفتن یعنی حرف زدن.'],['کدام کلمه درست نوشته شده؟','غذا',['قذا','غزا','قزا'],'با «غ» و «ذ» نوشته می‌شود.']],
+6:[['در «او با دقت نوشت» قید کدام است؟','با دقت',['او','نوشت','کتاب'],'قید می‌گوید کار چطور انجام شد.'],['متضاد «شادی» کدام است؟','غم',['خنده','بازی','رنگ'],'ضدِ خوشحالی چیست؟'],['مترادف «بزرگ» کدام است؟','کلان',['کوچک','ریز','اندک'],'کلان یعنی بزرگ.'],['دگر عضوها را نماند ...','قرار',['بهار','کتاب','پرنده'],'شعر سعدی؛ هم‌قافیه با «روزگار».'],['کلمهٔ «کتابخانه» چه نوعی است؟','مرکب',['ساده','مشتق','جمع'],'از دو کلمهٔ کتاب و خانه ساخته شده.'],['کدام کلمه درست نوشته شده؟','خوشحال',['خوشهال','خشحال','خوشحآل'],'«حال» با «ح» نوشته می‌شود.']]};
+const MP={4:'شب-روز,گرم-سرد,بلند-کوتاه,زیاد-کم,سبک-سنگین,باز-بسته',5:'زیبا-قشنگ,دانا-آگاه,سخن-حرف,خانه-سرا,پیروز-برنده,راه-جاده',6:'شادی-غم,آغاز-پایان,بیم-ترس,آزادی-اسارت,رنج-سختی,دانش-علم'};
+const WB={4:[['مدرسه','جایی که درس می‌خوانیم'],['کتاب','صفحه دارد و می‌خوانیمش'],['دفتر','توش مشق می‌نویسیم'],['پرنده','پر دارد و پرواز می‌کند'],['خورشید','روزها در آسمان می‌درخشد'],['دانش','هم‌معنی علم']],5:[['ایران','سرزمین ما'],['معلم','درس می‌دهد'],['درخت','ریشه و برگ دارد'],['ستاره','شب‌ها در آسمان می‌درخشد'],['دوستی','رابطهٔ مهربانانهٔ دو دوست'],['باغ','جایی پر از درخت و گل']],6:[['فرهنگ','آداب و رسوم یک ملت'],['سرزمین','وطن'],['آموزش','یاد دادن و یاد گرفتن'],['تلاش','کوشش'],['پیروزی','برد'],['مهربانی','رفتار نرم و دوستانه']]};
+const MQ={4:[l=>{const x=R(10,60+l*30),y=R(10,60+l*30);return[`${f(x)} + ${f(y)}`,x+y,1,'اول یکان‌ها رو جمع کن.']},l=>{const x=R(10,60+l*30),y=R(10,60+l*30);return[`${f(x+y)} − ${f(y)}`,x,1,'تفریق عکس جمع است.']},l=>{const u=R(2,9),v=R(2,10);return[`${f(u)} × ${f(v)}`,u*v,1,'جدول ضرب رو یادت بیار.']},l=>{const u=R(2,9),v=R(2,10);return[`${f(u*v)} ÷ ${f(u)}`,v,1,'تقسیم عکس ضرب است.']}],
+5:[l=>{const x=R(12,40+l*8),u=R(2,9);return[`${f(x)} × ${f(u)}`,x*u,1,'اول یکان‌ها رو ضرب کن.']},l=>{const u=R(2,9),v=R(5,30+l*5);return[`${f(u*v)} ÷ ${f(u)}`,v,1,'تقسیم عکس ضرب است.']},l=>{const A=R(11,89)/10,B=R(11,89)/10;return[`${f(A)} + ${f(B)}`,Number((A+B).toFixed(1)),.1,'ممیزها رو زیر هم بنویس.']},l=>{const d=R(5,12),A=R(1,4),B=R(1,4),t=A+B,z=`${f(t)}/${f(d)}`;return[`${f(A)}/${f(d)} + ${f(B)}/${f(d)}`,z,0,'مخرج‌ها برابرن؛ فقط صورت‌ها رو جمع کن.',[z,`${f(t+1)}/${f(d)}`,`${f(t-1)}/${f(d)}`,`${f(t)}/${f(d*2)}`]]}],
+6:[l=>{const x=R(100,300+l*40),u=R(2,9);return[`${f(x)} × ${f(u)}`,x*u,1,'عددها رو یکی‌یکی ضرب کن.']},l=>{const p=[10,20,25,50][R(0,3)],n=[40,80,100,200][R(0,3)];return[`${f(p)}٪ از ${f(n)}`,p*n/100,1,'درصد یعنی «از صد».']},l=>{const x=R(3,15),y=R(3,15);return[`مساحت مستطیل ${f(x)} در ${f(y)}`,x*y,1,'مساحت = طول × عرض.']},l=>{const A=R(11,49)/10,u=R(2,9);return[`${f(A)} × ${f(u)}`,Number((A*u).toFixed(1)),.1,'اول بدون ممیز ضرب کن، بعد ممیز بذار.']}]};
+function mq(g,l){const[q,a,s,h,fo]=MQ[g][R(0,3)](l);let o;if(fo)return{q,a,o:shuf(fo),h};const st=new Set([a]);while(st.size<4){const d=Number((a+R(1,5)*(R(0,1)?1:-1)*s).toFixed(1));if(d>=0)st.add(d)}return{q,a:f(a),o:shuf([...st].map(f)),h}}
+
+let T,G;const stop=()=>clearInterval(T);
+function gsay(t,p){$('gc').className='ch '+p;$('gc').innerHTML=p==='think'||p==='sad'?gl(p):pp(p);$('gs').textContent=t}
+const prog=()=>(S.pr=S.pr||{},S.pr[wi+'-'+S.grade]||{d:0,s:[]});
+function drawWorld(){const w=W[wi],p=prog();$('wh').style.background=`var(${w.c})`;$('wh').textContent=w.n;$('lv').innerHTML=Array.from({length:MX(wi)},(_,i)=>{const ok=i<=p.d;return`<button class="lv ${ok?'':'lock'}${i%10===9?' bs':''}" data-i="${i}" ${ok?`style="background:var(${w.c});box-shadow:0 4px 0 var(${w.d})"`:''}>${fa(i+1)}${i%10===9?'<small>باس</small>':p.s[i]?`<small>${'★'.repeat(p.s[i])}</small>`:''}</button>`}).join('');say('بیا شروع کنیم، '+S.name+'!','happy')}
+const _dm=drawMap;drawMap=function(){_dm();document.querySelectorAll('#mp .w small').forEach((s,i)=>{const p=(S.pr||{})[i+'-'+S.grade];s.textContent=fa((p?p.s:[]).reduce((a,b)=>a+(b||0),0))+' از '+fa(MX(i)*3)+' ستاره'})};
+BACK.game='world';
+$('back').onclick=()=>{stop();snd('click');go(BACK[cur]||'splash')};
+$('lv').onclick=e=>{const b=e.target.closest('.lv');if(!b)return;const i=+b.dataset.i;
+ if(i>prog().d){snd('bad');say('اول مرحله‌های قبلی رو تموم کن!','sad')}
+ else start(i)};
+function start(i){stop();G={i,t:i%10===9?'boss':GL[wi][i%10],ok:0};go('game');$('ttl').textContent=W[wi].n;gsay('بزن بریم!','happy');({quiz:runQ,bub:runQ,poem:runQ,tf:runTF,mem:runMem,word:runWord,sort:runSort,kit:runKit,map:runMap,puz:runPuz,boss:()=>cutscene(runQ)})[G.t]()}
+function fin(st,msg){stop();if(G.t==='daily')return finD(st);const p=prog();S.pr[wi+'-'+S.grade]=p;if(G.i>=p.d)p.d=G.i+1;const pv=p.s[G.i]||0;p.s[G.i]=Math.max(pv,st);rew(st,pv);save();snd('win');gsay(msg,'happy');$('gtop').innerHTML='';$('gb').onclick=null;$('gb').innerHTML=`<div class="stars">${'★'.repeat(st)}${'☆'.repeat(3-st)}</div><div>${G.rw}</div><div class="row"><button class="btn" id="r1">دوباره</button><button class="btn alt" id="r2">ادامه</button></div>`;$('r1').onclick=()=>start(G.i);$('r2').onclick=()=>go('world')}
+
+/* quiz race + bubble pop */
+function runQ(){const bi=G.i/10|0,N=G.t==='boss'?(wi===5?5:7+bi):5;G.N=N;G.mx=wi===5?5:3;G.hp=G.mx;G.h1=2;G.h2=2;G.tl=G.t==='boss'?(wi===5?20000:wi===7?30000:Math.max(7,12-bi)*1000):wi===7?45000:15000;G.q=wi===1||wi===7?Array.from({length:N},()=>wi===7?mqa(G.i):mq(S.grade,Math.min(G.i,24))):(a=>G.t==='boss'?[...a,...shuf(a),...shuf(a)]:a)(shuf(POOL())).slice(0,N).map(x=>({q:x[0],a:x[1],o:shuf([x[1],...x[2]]),h:x[3]}));G.k=0;G.p=0;G.gl=0;$('gb').onclick=e=>{const b=e.target.closest('[data-v]');if(b&&!G.lock&&!b.disabled)pick(b)};showQ()}
+const trk=()=>{if($('tp')){$('tp').style.width=G.p*100/G.N+'%';$('tg').style.width=G.gl*100/G.N+'%'}};
+function showQ(){const c=G.q[G.k],bub=G.t==='bub',rc=G.t==='quiz';G.first=true;stop();
+ $('gtop').innerHTML=`<span>${fa(G.k+1)} از ${fa(G.N)}</span>`+(!rc?'':`<div class="trk"><span>پاپی</span><div><i id="tp" style="background:var(--p)"></i></div></div><div class="trk"><span>گلوبی</span><div><i id="tg" style="background:var(--g)"></i></div></div><div class="tm"><i id="tb"></i></div>`);trk();
+ if(G.t==='boss')bossTop();$('gb').innerHTML=`<div class="qq">${c.q}</div><div class="${bub?'bubs':'opts'}">${c.o.map(o=>`<button class="${bub?'bb':'op'}" data-v="${o}">${o}</button>`).join('')}</div>`;
+ if(rc||G.t==='boss'){let t=0;T=setInterval(()=>{t+=100;$('tb').style.width=100-t*100/G.tl+'%';if(t>=G.tl)pick(null)},100)}}
+function pick(b){const c=G.q[G.k];
+ if(!b){stop();G.lock=true;if(G.first){G.gl++;if(G.t==='boss'){G.hp--;if(G.hp<=0)return lose()}}trk();if(G.t==='boss')bossTop();snd('bad');gsay('وقت تموم شد! جواب درست رو ببین.','sad');document.querySelectorAll('[data-v]').forEach(x=>{if(x.dataset.v===c.a)x.classList.add('good')});return next(1600)}
+ if(b.dataset.v===c.a){stop();snd('ok');b.classList.add('good');if(G.first){G.ok++;G.p++}trk();gsay(G.first?'آفرین!':'درست شد، دمت گرم!','happy');G.lock=true;next(900)}
+ else{snd('bad');b.classList.add('no');b.disabled=true;if(G.first){G.first=false;G.gl++;trk();if(G.t==='boss'){G.hp--;bossTop();if(G.hp<=0)return lose()}}gsay(c.h,'sad')}}
+function next(ms){setTimeout(()=>{G.lock=false;if(++G.k<G.N)showQ();else{const r=G.t==='boss'?G.hp/G.mx:G.ok/G.N;fin(r>=.9?3:r>=.6?2:1,G.t==='boss'?'باس شکست خورد!':G.t==='quiz'?(G.p>G.gl?'پاپی برنده شد!':'مسابقه تموم شد!'):(G.t==='bub'?'همهٔ حباب‌ها ترکید!':'آفرین، تموم شد!'))}},ms)}
+
+/* memory match */
+function runMem(){let pr;if(wi===1){const u=new Set();pr=[];while(pr.length<6){const x=R(2,9+G.i%3),y=R(2,S.grade+5);if(!u.has(x*y)){u.add(x*y);pr.push([`${f(x)}×${f(y)}`,f(x*y)])}}}else pr=shuf((wi>4?MPE[wi][S.grade]:wi===2?MPS[S.grade]:wi?MPX[wi]:MP[S.grade]).split(',')).slice(0,6).map(s=>s.split('-'));
+ G.cards=shuf(pr.flatMap((p,i)=>[{t:p[0],id:i},{t:p[1],id:i}]));G.sel=[];G.m=0;G.mt=0;G.lock=false;gsay(wi===1?'عملیات رو با جواب‌شون جفت کن!':(wi?'جفت‌ها رو پیدا کن!':'کلمه‌های هم‌معنی یا متضاد رو جفت کن!'),'think');
+ $('gtop').innerHTML='';$('gb').innerHTML=`<div class="mg">${G.cards.map((c,i)=>`<button class="mc" data-i="${i}"><span>${c.t}</span></button>`).join('')}</div>`;
+ $('gb').onclick=e=>{const b=e.target.closest('.mc');if(!b||G.lock||b.classList.contains('up'))return;snd('click');b.classList.add('up');G.sel.push(b);if(G.sel.length<2)return;G.m++;const[a,c]=G.sel;
+  if(G.cards[a.dataset.i].id===G.cards[c.dataset.i].id){snd('ok');a.classList.add('dn');c.classList.add('dn');G.sel=[];gsay('جفت شد!','happy');if(++G.mt===6)setTimeout(()=>fin(G.m<=9?3:G.m<=14?2:1,'همه رو پیدا کردی!'),700)}
+  else{G.lock=true;gsay('نه، دوباره امتحان کن!','sad');setTimeout(()=>{a.classList.remove('up');c.classList.remove('up');G.sel=[];G.lock=false},800)}}}
+
+/* word builder (tap letters in order) */
+function runWord(){G.w=shuf(WB[S.grade]).slice(0,4);G.k=0;G.mis=0;G.lock=false;
+ $('gb').onclick=e=>{const b=e.target.closest('.lt');if(!b||G.lock)return;snd('click');const w=G.w[G.k][0];
+  if(b.dataset.p!==undefined)G.a.push(G.pool.splice(+b.dataset.p,1)[0]);else G.pool.push(G.a.splice(+b.dataset.j,1)[0]);
+  drawW();if(G.a.length<w.length)return;G.lock=true;
+  if(G.a.map(x=>x.c).join('')===w){snd('ok');gsay('آفرین، درسته!','happy');setTimeout(()=>{G.lock=false;++G.k<4?showW():fin(G.mis?G.mis<3?2:1:3,'همهٔ کلمه‌ها رو ساختی!')},900)}
+  else{G.mis++;snd('bad');gsay(`حرف اولش «${w[0]}» است. دوباره امتحان کن!`,'sad');setTimeout(()=>{G.pool=shuf([...G.pool,...G.a]);G.a=[];G.lock=false;drawW()},1200)}};showW()}
+function showW(){const w=G.w[G.k][0];G.a=[];do{G.pool=shuf([...w,...DEC(w)].map(c=>({c})))}while(w.length>2&&G.pool.map(x=>x.c).join('')===w);gsay('حرف‌ها رو به ترتیب بزن تا کلمه ساخته بشه!','think');drawW()}
+function drawW(){$('gtop').innerHTML=`<span>${fa(G.k+1)} از ${fa(4)}</span>`;$('gb').innerHTML=`<div class="qq">${G.w[G.k][1]}</div><div class="ans">${G.a.map((x,j)=>`<button class="lt a" data-j="${j}">${x.c}</button>`).join('')||'<span>…</span>'}</div><div class="row">${G.pool.map((x,p)=>`<button class="lt" data-p="${p}">${x.c}</button>`).join('')}</div>`}
+
+/* phase 3 */
+const GL=[['quiz','mem','word','poem','quiz','mem','word','poem','word'],['bub','quiz','mem','kit','bub','quiz','mem','kit','bub'],['quiz','tf','sort','mem','quiz','tf','sort','mem','quiz'],['quiz','map','tf','puz','quiz','map','tf','puz','map'],['quiz','tf','sort','puz','quiz','tf','sort','puz','quiz']];
+const DEC=w=>shuf([...'ابپتثجچحخدذرزسشصضطظعغفقکگلمنوهی'].filter(c=>!w.includes(c))).slice(0,S.grade-4);
+WB[5].push(['کتابخانه','جایی پر از کتاب'],['دانشمند','کسی که دانش زیادی دارد'],['تابستان','گرم‌ترین فصل سال'],['شکوفه','گل کوچک درخت در بهار']);
+WB[6].push(['استقلال','آزاد بودن از وابستگی'],['شاهنامه','کتاب بزرگ فردوسی'],['همبستگی','با هم و یکدل بودن'],['دانشگاه','بعد از دبیرستان می‌رویم'],['پژوهشگر','کسی که تحقیق می‌کند']);
+const PO=[['توانا بود هر که دانا بود / ز دانش دل پیر ... بود','برنا',['پیر','تنگ','سرد'],'برنا یعنی جوان. شعر فردوسی.'],['بنی‌آدم اعضای یکدیگرند / که در آفرینش ز یک ... اند','گوهر',['دشمن','باغ','رنگ'],'شعر سعدی دربارهٔ مهربانی.'],['چو عضوی به درد آورد روزگار / دگر عضوها را نماند ...','قرار',['بهار','کتاب','پرنده'],'هم‌قافیه با «روزگار».'],['ضرب‌المثل: کار امروز را به ... نینداز','فردا',['دیروز','شب','ماه'],'بعد از امروز می‌آید.'],['قطره قطره جمع گردد وانگهی ... شود','دریا',['باران','رود','چشمه'],'قطره‌های زیاد چه می‌شوند؟'],['ضرب‌المثل: سالی که نکوست از ... پیداست','بهارش',['زمستانش','پاییزش','شبش'],'فصلی که سال با آن شروع می‌شود.']];
+const QX={2:[['کدام عضو بدن خون را پمپ می‌کند؟','قلب',['ریه','معده','مغز'],'با تپش خود کار می‌کند.'],['گیاهان آب را با چه بخشی جذب می‌کنند؟','ریشه',['برگ','گل','ساقه'],'این بخش زیر خاک است.'],['کدام سیاره به خورشید نزدیک‌تر است؟','تیر',['مریخ','زحل','نپتون'],'نزدیک‌ترین سیارهٔ منظومهٔ شمسی است.'],['آب در صفر درجهٔ سانتی‌گراد چه می‌شود؟','یخ',['بخار','باران','ابر'],'در فریزر هم همین می‌شود.'],['گیاهان در برگ‌هایشان چه می‌سازند؟','غذا',['استخوان','پوست','ریشه'],'به آن فتوسنتز می‌گویند.'],['گیاهان برای فتوسنتز کدام گاز را جذب می‌کنند؟','کربن دی‌اکسید',['اکسیژن','نیتروژن','هلیوم'],'ما این گاز را بازدم می‌کنیم.']],
+3:[['پایتخت ایران کدام شهر است؟','تهران',['شیراز','تبریز','اصفهان'],'بزرگ‌ترین شهر ایران است.'],['بلندترین قلهٔ ایران کدام است؟','دماوند',['سبلان','الوند','زردکوه'],'در رشته‌کوه البرز است.'],['نوروز در کدام فصل است؟','بهار',['تابستان','پاییز','زمستان'],'اول فروردین، آغاز سال نو.'],['تخت جمشید در کدام استان است؟','فارس',['گیلان','یزد','خوزستان'],'نزدیک شیراز است.'],['میدان نقش جهان در کدام شهر است؟','اصفهان',['تبریز','مشهد','کرمان'],'به «نصف جهان» معروف است.'],['در شمال ایران کدام دریا قرار دارد؟','خزر',['عمان','سرخ','مدیترانه'],'بزرگ‌ترین دریاچهٔ جهان است.']],
+4:[['در سفرهٔ هفت‌سین کدام یک هست؟','سیب',['موز','پرتقال','هلو'],'با حرف «س» شروع می‌شود.'],['کدام ساز ایرانی با مضراب نواخته می‌شود؟','سنتور',['نی','دف','کمانچه'],'سیم‌هایش را با دو مضراب می‌زنند.'],['شاهنامه را چه کسی سرود؟','فردوسی',['سعدی','حافظ','مولوی'],'حدود هزار سال پیش.'],['کدام غذا ایرانی است؟','قورمه‌سبزی',['پیتزا','سوشی','همبرگر'],'با سبزی و لوبیا درست می‌شود.'],['رستم پسر کدام پهلوان بود؟','زال',['سهراب','سیاوش','کیکاووس'],'زال سپیدمو پدر رستم بود.'],['نقش بته‌جقه روی چه چیزی زیاد دیده می‌شود؟','ترمه',['شیشه','کاغذ','سنگ'],'روی پارچه‌های سنتی.']]};
+const MPX={2:'قلب-پمپ خون,ریه-تنفس,چشم-دیدن,گوش-شنیدن,ریشه-جذب آب,برگ-غذاسازی',3:'تهران-پایتخت,اصفهان-نقش جهان,شیراز-تخت جمشید,تبریز-بازار,یزد-بادگیر,کرمان-پسته',4:'تار-ساز,قالی-دستباف,نوروز-هفت‌سین,فردوسی-شاهنامه,رستم-پهلوان,سنتور-مضراب'};
+const SORT={2:[[['جاندار',['گربه','درخت','ماهی','گل','پرنده','کرم']],['بی‌جان',['سنگ','آب','کوه','میز','خاک','مداد']]],[['گیاه',['گل','درخت','برگ','علف','گندم','ریشه']],['حیوان',['شیر','عقاب','ماهی','اسب','گاو','لاک‌پشت']]]],3:[[['شهرهای شمال',['رشت','ساری','گرگان','رامسر','بابلسر','لاهیجان']],['شهرهای جنوب',['بندرعباس','بوشهر','کیش','اهواز','چابهار','آبادان']]]],4:[[['غذای ایرانی',['قورمه‌سبزی','فسنجان','آش رشته','کباب','تهچین','قیمه']],['ساز ایرانی',['تار','سنتور','کمانچه','نی','دف','تنبک']]]]};
+const POOL=()=>{if(G.t!=='poem'&&G.t!=='daily'&&wi>1)return PL(wi);if(G.t==='daily')return[...PQ[S.grade],...SQ[S.grade],...QG[3][S.grade],...QG[4][S.grade]];if(G.t==='poem'||wi>1){const L=G.t==='poem'?PO:QX[wi];return S.grade===4?L.slice(0,5):S.grade===5?L:L.slice(1)}return[...PQ[S.grade],...pq(S.grade,8)]};
+
+/* true or false */
+function runTF(){G.q=shuf(POOL()).slice(0,6).map(x=>{const t=R(0,1);return{q:x[0],s:t?x[1]:x[2][R(0,2)],t,h:x[3]}});G.k=0;G.N=G.q.length;G.lock=false;
+ $('gb').onclick=e=>{const b=e.target.closest('[data-t]');if(!b||G.lock)return;G.lock=true;const c=G.q[G.k];if((b.dataset.t==='1')===!!c.t){G.ok++;snd('ok');gsay('آفرین!','happy')}else{snd('bad');gsay(c.h,'sad')}
+  setTimeout(()=>{G.lock=false;if(++G.k<G.N)showTF();else{const r=G.ok/G.N;fin(r>=.9?3:r>=.6?2:1,'تموم شد!')}},1500)};showTF()}
+function showTF(){const c=G.q[G.k];$('gtop').innerHTML=`<span>${fa(G.k+1)} از ${fa(G.N)}</span>`;$('gb').innerHTML=`<div class="qq">${c.q}</div><div class="qq" style="background:var(--y);color:#3b1f7a">${c.s}</div><b>آیا این جواب درسته؟</b><div class="row"><button class="btn" data-t="1">درسته</button><button class="btn" data-t="0" style="background:var(--r);box-shadow:0 5px 0 var(--rd);text-shadow:none">غلطه</button></div>`}
+
+/* sort it */
+function runSort(){const[A,B]=shuf(wi===2?SS[S.grade]:SORT[wi])[0];G.it=shuf([...A[1].map(x=>[x,0]),...B[1].map(x=>[x,1])]).slice(0,8);G.gn=[A[0],B[0]];G.k=0;G.mis=0;gsay('هر چیز رو توی دستهٔ درستش بذار!','think');
+ $('gb').onclick=e=>{const b=e.target.closest('[data-g]');if(!b)return;if(+b.dataset.g===G.it[G.k][1]){snd('ok');gsay('درسته!','happy');if(++G.k===G.it.length)return fin(G.mis<2?3:G.mis<4?2:1,'همه رو دسته‌بندی کردی!');showSort()}else{G.mis++;snd('bad');gsay('نه! یه بار دیگه فکر کن.','sad')}};showSort()}
+function showSort(){$('gtop').innerHTML=`<span>${fa(G.k+1)} از ${fa(G.it.length)}</span>`;$('gb').innerHTML=`<div class="qq" style="font-size:2rem">${G.it[G.k][0]}</div><div class="row"><button class="btn" data-g="0">${G.gn[0]}</button><button class="btn alt" data-g="1">${G.gn[1]}</button></div>`}
+
+/* map game */
+const CT=[['تهران',115,64],['تبریز',36,26],['مشهد',241,54],['اصفهان',120,110],['شیراز',132,158],['اهواز',73,132],['بندرعباس',190,196],['زاهدان',263,160],['رشت',87,39],['کرمان',203,147]];
+function runMap(){G.q=shuf(CT).slice(0,6);G.k=0;G.mis=0;G.lock=false;gsay('شهر رو روی نقشه پیدا کن!','think');
+ $('gb').onclick=e=>{const b=e.target.closest('[data-c]');if(!b||G.lock)return;if(b.dataset.c===G.q[G.k][0]){G.lock=true;b.setAttribute('fill','#3ecf6e');snd('ok');gsay('آفرین!','happy');setTimeout(()=>{G.lock=false;++G.k<6?showMap():fin(G.mis<2?3:G.mis<4?2:1,'نقشه‌شناس شدی!')},800)}else{G.mis++;b.setAttribute('fill','#f2506b');snd('bad');gsay('نه، اون شهر دیگه‌ایه!','sad')}};showMap()}
+function showMap(){$('gtop').innerHTML=`<span>${fa(G.k+1)} از ${fa(6)}</span>`;$('gb').innerHTML=`<div class="qq">«${G.q[G.k][0]}» کجاست؟</div><svg viewBox="0 0 300 235" style="width:100%"><polygon points="0,8 62,20 85,34 140,45 155,37 186,28 217,34 264,50 268,65 257,88 262,136 272,160 298,203 273,226 202,218 155,205 109,185 96,152 71,152 57,122 31,105 22,81 12,43 3,19" fill="#cdf5da" stroke="#3b1f7a" stroke-width="4" stroke-linejoin="round"/>${CT.map(c=>`<circle data-c="${c[0]}" cx="${c[1]}" cy="${c[2]}" r="11" fill="#9b6bff" stroke="#3b1f7a" stroke-width="3" style="cursor:pointer"/>`).join('')}</svg>`}
+
+/* Glooby's kitchen */
+function runKit(){G.k=0;G.mis=0;G.lock=false;G.ns=[[2,3,4],[4,5,6,8],[6,8,10,12]][S.grade-4];
+ $('gb').onclick=e=>{const s=e.target.closest('[data-s]');if(s&&!G.lock){s.classList.toggle('sel');s.setAttribute('fill',s.classList.contains('sel')?'#3ecf6e':s.dataset.f);snd('click')}
+  if(e.target.closest('#ck')&&!G.lock){if(document.querySelectorAll('[data-s].sel').length===G.kn){G.lock=true;snd('ok');gsay('خوشمزه شد!','happy');setTimeout(()=>{G.lock=false;++G.k<5?showKit():fin(G.mis<2?3:G.mis<4?2:1,'آشپز ماهری شدی!')},900)}else{G.mis++;snd('bad');gsay(`دوباره بشمار! کل ظرف ${f(G.n)} تکه است.`,'sad')}}};showKit()}
+function showKit(){G.n=G.ns[R(0,G.ns.length-1)];G.kn=R(1,G.n-1);let sl='';gsay('گلوبی گرسنه است!','happy');
+ for(let i=0;i<G.n;i++){const a=i/G.n*6.2832-1.5708,b=(i+1)/G.n*6.2832-1.5708,P=(t=>[80+70*Math.cos(t),80+70*Math.sin(t)].map(v=>v.toFixed(1)).join(' ')),fl=i%2?'#ff8fc7':'#ffd93d';sl+=`<path data-s data-f="${fl}" d="M80 80L${P(a)}A70 70 0 0 1 ${P(b)}Z" fill="${fl}" stroke="#3b1f7a" stroke-width="3" stroke-linejoin="round" style="cursor:pointer"/>`}
+ $('gtop').innerHTML=`<span>${fa(G.k+1)} از ${fa(5)}</span>`;$('gb').innerHTML=`<div class="qq">ظرف به ${f(G.n)} تکهٔ مساوی تقسیم شده. ${f(G.kn+'/'+G.n)} ظرف رو انتخاب کن!</div><svg viewBox="0 0 160 160" style="width:220px">${sl}</svg><button class="btn" id="ck">بررسی</button>`}
+
+/* puzzle time */
+const SC=['<rect width="300" height="300" fill="#4da3ff"/><circle cx="240" cy="55" r="28" fill="#ffd93d"/><path d="M0 230L150 60L300 230V300H0Z" fill="#9b6bff"/><path d="M150 60L118 112 140 100 160 118 180 104Z" fill="#fff"/><rect y="250" width="300" height="50" fill="#3ecf6e"/>','<rect width="300" height="300" fill="#ffd93d"/><rect y="250" width="300" height="50" fill="#3ecf6e"/><path d="M70 250V150Q70 90 150 60Q230 90 230 150V250H190V160Q190 125 150 110Q110 125 110 160V250Z" fill="#ff8fc7" stroke="#3b1f7a" stroke-width="6"/><rect x="140" y="20" width="20" height="45" fill="#f2506b"/>','<rect width="300" height="300" fill="#ff8fc7"/><rect y="250" width="300" height="50" fill="#ffd93d"/>'+[40,130,220].map(x=>`<rect x="${x}" y="100" width="40" height="150" fill="#9b6bff"/><rect x="${x-8}" y="80" width="56" height="26" fill="#6a3fd6"/>`).join('')],PN=['قلهٔ دماوند','برج آزادی','تخت جمشید'];
+function runPuz(){const sc=G.i%3;G.B=[0,1,2,3,4,5,6,7,8];G.mv=0;let z=8;for(let n=0;n<60;n++){const nb=[z-3,z+3,z%3?z-1:-1,z%3<2?z+1:-1].filter(x=>x>=0&&x<9),m=nb[R(0,nb.length-1)];[G.B[z],G.B[m]]=[G.B[m],G.B[z]];z=m}
+ gsay('تکه‌ها رو جابه‌جا کن تا عکس کامل بشه!','think');
+ $('gb').onclick=e=>{const c=e.target.closest('[data-p]');if(!c)return;const p=+c.dataset.p,q=G.B.indexOf(8);if(Math.abs(p-q)===3||(Math.abs(p-q)===1&&Math.floor(p/3)===Math.floor(q/3))){[G.B[p],G.B[q]]=[G.B[q],G.B[p]];G.mv++;snd('click');drawPuz(sc);if(G.B.every((v,i)=>v===i)){snd('ok');setTimeout(()=>fin(G.mv<=80?3:G.mv<=140?2:1,'عکس کامل شد!'),600)}}};drawPuz(sc)}
+function drawPuz(sc){$('gtop').innerHTML=`<span>${PN[sc]} — ${fa(G.mv)} حرکت</span>`;$('gb').innerHTML=`<svg viewBox="0 0 300 300" style="width:84px;border:3px solid #3b1f7a;border-radius:10px">${SC[sc]}</svg><div class="pz">${G.B.map((v,i)=>v===8?`<div data-p="${i}"></div>`:`<svg data-p="${i}" viewBox="${v%3*100} ${Math.floor(v/3)*100} 100 100">${SC[sc]}</svg>`).join('')}</div>`}
+
+/* phase 4 */
+GL.forEach(a=>a.push('boss'));BACK.stk=BACK.shop=BACK.par='map';
+const STK=[['cat','گربهٔ ایرانی'],['nar','انار'],['zaf','زعفران'],['dam','دماوند'],['tul','لالهٔ سرخ'],['tea','چای'],['rug','قالی'],['aza','برج آزادی']];
+const SV={cat:'<circle cx="50" cy="56" r="30" fill="#ff8fc7"/><path d="M24 40L28 14L46 30ZM76 40L72 14L54 30Z" fill="#ff8fc7"/><circle cx="40" cy="52" r="4" fill="#3b1f7a"/><circle cx="60" cy="52" r="4" fill="#3b1f7a"/><path d="M42 66Q50 72 58 66" fill="none"/>',nar:'<circle cx="50" cy="58" r="32" fill="#f2506b"/><path d="M38 28L44 16L50 24L56 16L62 28Z" fill="#3ecf6e"/>',zaf:'<path d="M50 92V52" stroke-width="5" stroke="#3ecf6e"/><ellipse cx="50" cy="38" rx="9" ry="22" fill="#9b6bff"/><ellipse cx="36" cy="44" rx="9" ry="20" transform="rotate(-30 36 44)" fill="#9b6bff"/><ellipse cx="64" cy="44" rx="9" ry="20" transform="rotate(30 64 44)" fill="#9b6bff"/><circle cx="50" cy="52" r="6" fill="#f2506b"/>',dam:'<circle cx="74" cy="24" r="10" fill="#ffd93d"/><path d="M5 85L50 18L95 85Z" fill="#9b6bff"/><path d="M50 18L38 38 48 33 56 40 63 32Z" fill="#fff"/>',tul:'<path d="M50 92V50" stroke-width="5" stroke="#3ecf6e"/><path d="M28 20Q28 56 50 56Q72 56 72 20L61 34L50 16L39 34Z" fill="#f2506b"/>',tea:'<path d="M26 28H74L68 80Q50 90 32 80Z" fill="#ffd93d"/><path d="M30 44H70L67 66Q50 74 33 66Z" fill="#f2506b"/>',rug:'<rect x="14" y="22" width="72" height="56" rx="4" fill="#4da3ff"/><path d="M50 30L74 50L50 70L26 50Z" fill="#f2506b"/><circle cx="50" cy="50" r="7" fill="#ffd93d"/>',aza:'<path d="M20 86V50Q20 24 50 14Q80 24 80 50V86H66V54Q66 38 50 32Q34 38 34 54V86Z" fill="#ff8fc7"/>'};
+const stk=id=>`<svg viewBox="0 0 100 100" width="100%"><g stroke="#3b1f7a" stroke-width="3" stroke-linejoin="round">${SV[id]}</g></svg>`;
+const OK='stroke="#3b1f7a" stroke-width="4" stroke-linejoin="round"';
+const OUT={crown:['g','تاج',100,`<path d="M52 38L56 14L68 28L80 10L92 28L104 14L108 38Z" fill="#ffd93d" ${OK}/>`],hat:['g','کلاه جشن',60,`<path d="M62 40L80 2L98 40Z" fill="#9b6bff" ${OK}/><circle cx="80" cy="4" r="6" fill="#f2506b" ${OK}/>`],bow:['p','پاپیون',60,`<path d="M80 12L56 2V22ZM80 12L104 2V22Z" fill="#f2506b" ${OK}/><circle cx="80" cy="12" r="6" fill="#ffd93d" ${OK}/>`],gls:['p','عینک',100,`<circle cx="71" cy="57" r="10" fill="#4da3ff" fill-opacity=".45" ${OK}/><circle cx="89" cy="57" r="10" fill="#4da3ff" fill-opacity=".45" ${OK}/><path d="M81 57h-2" ${OK}/>`]};
+const _gl=gl,_pp=pp,addO=(s,k)=>k?s.replace('</svg>',OUT[k][3]+'</svg>'):s;
+gl=p=>addO(_gl(p),(S.wear||{}).g);pp=p=>addO(_pp(p),(S.wear||{}).p);
+const _dm2=drawMap;drawMap=function(){_dm2();$('hi').insertAdjacentHTML('beforeend',`<span class="coin">${f(avs())} ★</span><span class="coin">${f(S.coins||0)} سکه</span>`)};
+const _go=go;go=function(id){_go(id);$('nav').style.display=['map','stk','shop','par'].includes(id)?'flex':'none';const t={stk:'کتاب استیکر',shop:'فروشگاه',par:'صفحهٔ والدین'}[id];if(t)$('ttl').textContent=t;if(id==='stk')drawStk();if(id==='shop')drawShop();if(id==='par')drawPar()};
+
+/* rewards */
+function rew(st,pv=0){const c=Math.max(0,st-pv)*2+(G.t==='boss'&&!pv?15:0);S.coins=(S.coins||0)+c;S.stk=S.stk||[];let m=c?`<b>+${f(c)} سکه</b>`:'<b>سکه فقط برای ستارهٔ جدید داده می‌شه</b>';if((st===3&&pv<3)||(G.t==='boss'&&!pv)){const n=STK.findIndex(x=>!S.stk.includes(x[0]));if(n>=0){S.stk.push(STK[n][0]);m+=`<br>استیکر جدید: ${STK[n][1]}<div style="width:70px;margin:6px auto">${stk(STK[n][0])}</div>`}}G.rw=m}
+function drawStk(){$('sg').innerHTML=STK.map(x=>{const h=(S.stk||[]).includes(x[0]);return`<div class="cd ${h?'':'lk'}"><div style="width:90px">${h?stk(x[0]):'<div style="font-size:3rem">؟</div>'}</div>${h?x[1]:'قفل'}</div>`}).join('')}
+function drawShop(){const o=S.own||[];$('shp').innerHTML=`<div class="coin">${f(S.coins||0)} سکه</div><div class="cg">${Object.keys(OUT).map(k=>{const[t,n,pr]=OUT[k],w=(S.wear||{})[t]===k;return`<div class="cd"><div class="ch">${addO((t==='g'?_gl:_pp)('happy'),k)}</div>${n}<button class="btn" style="font-size:1rem;padding:8px 16px" data-o="${k}">${w?'درآوردن':o.includes(k)?'پوشیدن':f(pr)+' سکه'}</button></div>`}).join('')}</div>`}
+$('shp').onclick=e=>{const b=e.target.closest('[data-o]');if(!b)return;const k=b.dataset.o,[t,,pr]=OUT[k];S.own=S.own||[];S.wear=S.wear||{};if(S.own.includes(k)){S.wear[t]=S.wear[t]===k?null:k;snd('click')}else if((S.coins||0)>=pr){S.coins-=pr;S.own.push(k);S.wear[t]=k;snd('win')}else{snd('bad');b.textContent='سکهٔ کم داری!';return}save();drawShop()};
+function drawPar(){S.pr=S.pr||{};$('prt').innerHTML=`<div class="qq">${S.name} — پایهٔ ${GR[S.grade]}<br>سکه: ${f(S.coins||0)} · استیکر: ${f((S.stk||[]).length)} از ${f(STK.length)}</div>`+W.map((w,i)=>{const p=S.pr[i+'-'+S.grade]||{d:0,s:[]},st=p.s.reduce((a,b)=>a+(b||0),0);return`<div class="qq" style="font-size:1.05rem"><div style="display:flex;justify-content:space-between"><span>${w.n}</span><span>${f(p.d)} از ${f(MX(i))} مرحله · ${f(st)} ستاره</span></div><div class="trk"><div><i style="width:${st/(MX(i)*3)*100}%;background:var(${w.c})"></i></div></div></div>`}).join('')+`<button class="lnk" id="rs">پاک کردن همهٔ پیشرفت</button>`;
+ $('rs').onclick=()=>{if($('rs').dataset.s){S={name:'',av:0,grade:4,mute:false};save();$('new').hidden=true;$('go').textContent='شروع بازی';go('splash')}else{$('rs').dataset.s=1;$('rs').textContent='مطمئنی؟ دوباره بزن'}}}
+$('bk').onclick=()=>{snd('click');go('stk')};$('sh').onclick=()=>{snd('click');go('shop')};$('pa').onclick=()=>{snd('click');go('par')};
+
+/* boss + daily */
+function bossTop(){const h=Math.max(G.hp,0);$('gtop').innerHTML=`<div class="ch bossc" style="width:170px;height:170px;margin:0 auto">${gl(h<3?'sad':'think')}</div><div class="trk"><span>جان باس</span><div><i style="width:${(G.N-G.p)*100/G.N}%;background:var(--g)"></i></div></div><b style="color:var(--r);font-size:1.5rem">${'♥'.repeat(h)}${'♡'.repeat(3-h)}</b>`}
+function lose(){stop();snd('bad');gsay('باس برنده شد! دوباره امتحان کن.','sad');$('gtop').innerHTML='';$('gb').onclick=null;$('gb').innerHTML='<div class="row"><button class="btn" id="r1">دوباره</button><button class="btn alt" id="r2">برگشت</button></div>';$('r1').onclick=()=>start(G.i);$('r2').onclick=()=>go('world')}
+function startD(){stop();wi=0;G={i:0,t:'daily',ok:0};go('game');$('ttl').textContent='چالش روزانه';gsay('چالش امروز!','happy');runQ()}
+function finD(st){const t=new Date().toISOString().slice(0,10),first=S.daily!==t,c=first?3+st*2:0;S.daily=t;S.coins=(S.coins||0)+c;save();snd('win');gsay('چالش امروز تموم شد!','happy');$('gtop').innerHTML='';$('gb').onclick=null;$('gb').innerHTML=`<div class="stars">${'★'.repeat(st)}${'☆'.repeat(3-st)}</div><b>${first?'+'+f(c)+' سکه':'جایزهٔ امروز رو قبلاً گرفتی؛ فردا برگرد!'}</b><button class="btn alt" id="r2">ادامه</button>`;$('r2').onclick=()=>go('map')}
+$('dl').onclick=()=>{snd('click');startD()};
+
+/* better puzzle pictures */
+const K='stroke="#3b1f7a" stroke-width="5" stroke-linejoin="round"';
+SC[0]=`<rect width="300" height="300" fill="#4da3ff"/><rect y="140" width="300" height="160" fill="#8fc6ff"/><path d="M238 16V6M238 108V118M190 62H180M286 62H296M204 28L197 21M272 96L279 103M272 28L279 21M204 96L197 103" stroke="#ffd93d" stroke-width="6" stroke-linecap="round"/><g ${K}><circle cx="238" cy="62" r="26" fill="#ffd93d"/><g fill="#fff"><ellipse cx="62" cy="58" rx="34" ry="14"/><ellipse cx="92" cy="46" rx="22" ry="12"/></g><path d="M-10 236L50 166L100 206L160 156L230 214L310 172V300H-10Z" fill="#c5a8ff"/><path d="M20 262L150 68L280 262Z" fill="#9b6bff"/><path d="M150 68L280 262H205Z" fill="#6a3fd6"/><path d="M150 68L112 128L132 118L150 142L170 118L190 130Z" fill="#fff"/><path d="M-10 258Q80 226 160 252T310 246V300H-10Z" fill="#3ecf6e"/><path d="M40 270l14-34 14 34zM78 280l12-28 12 28z" fill="#1f8f47"/></g><g fill="#f2506b"><circle cx="190" cy="274" r="6"/><circle cx="222" cy="284" r="6"/><circle cx="252" cy="272" r="6"/></g>`;
+SC[1]=`<rect width="300" height="300" fill="#4da3ff"/><rect y="150" width="300" height="150" fill="#8fc6ff"/><g ${K}><g fill="#fff"><ellipse cx="50" cy="50" rx="34" ry="14"/><ellipse cx="250" cy="76" rx="30" ry="12"/></g><path d="M55 244L84 134Q150 74 216 134L245 244Z" fill="#ff8fc7"/><path d="M110 244V196Q110 154 150 144Q190 154 190 196V244Z" fill="#4da3ff"/><path d="M96 136Q150 100 204 136" fill="none" stroke="#9b6bff" stroke-width="9"/><path d="M122 104L150 52L178 104Z" fill="#f2506b"/><path d="M150 52V26"/><circle cx="150" cy="20" r="7" fill="#ffd93d"/><g fill="#9b6bff"><rect x="76" y="190" width="14" height="26"/><rect x="210" y="190" width="14" height="26"/><rect x="68" y="150" width="12" height="22"/><rect x="220" y="150" width="12" height="22"/></g><rect x="30" y="244" width="240" height="20" fill="#c5a8ff"/><path d="M-10 266H310V300H-10Z" fill="#3ecf6e"/><ellipse cx="150" cy="284" rx="64" ry="9" fill="#4da3ff"/></g>`;
+SC[2]=`<rect width="300" height="300" fill="#ff8fc7"/><rect y="150" width="300" height="150" fill="#ffd93d"/><g ${K}><circle cx="150" cy="150" r="62" fill="#ffd93d"/><rect y="236" width="300" height="64" fill="#c5a8ff"/><path d="M0 262H300M0 282H300"/><rect x="26" y="62" width="130" height="14" fill="#6a3fd6"/>${[34,96,160,222].map(x=>`<rect x="${x}" y="106" width="32" height="130" fill="#9b6bff"/><path d="M${x+11} 106V236M${x+21} 106V236" stroke="#6a3fd6" stroke-width="3"/><rect x="${x-9}" y="86" width="50" height="22" fill="#6a3fd6"/><rect x="${x-12}" y="74" width="56" height="14" fill="#9b6bff"/><rect x="${x-7}" y="226" width="46" height="12" fill="#6a3fd6"/>`).join('')}</g>`;
+
+/* science textbook content, one set per grade */
+const SQ={4:[['به تغییر حالت مایع به گاز چه می‌گویند؟','تبخیر',['ذوب','انجماد','چگالش'],'آب جوش در کتری بخار می‌شود.'],['یخ هنگام گرم شدن به چه تبدیل می‌شود؟','آب',['بخار','خاک','هوا'],'به این تغییر «ذوب» می‌گویند.'],['کدام بخش بدن از مغز محافظت می‌کند؟','جمجمه',['دنده‌ها','ستون فقرات','لگن'],'استخوان‌های سر.'],['قفسهٔ سینه از کدام اندام‌ها محافظت می‌کند؟','قلب و شش‌ها',['مغز','معده','کلیه‌ها'],'دنده‌ها مثل قفس هستند.'],['دو قطب هم‌نام آهنربا یکدیگر را چه می‌کنند؟','می‌رانند',['می‌ربایند','می‌شکنند','گرم می‌کنند'],'N با N یا S با S.'],['آهنربا کدام جسم را می‌رباید؟','میخ آهنی',['چوب','پلاستیک','شیشه'],'آهن جذب آهنربا می‌شود.'],['کدام بخش گیاه آب را از خاک جذب می‌کند؟','ریشه',['برگ','گل','میوه'],'زیر خاک قرار دارد.'],['سایه چه وقت تشکیل می‌شود؟','جسمی جلوی نور قرار بگیرد',['نور خاموش نشود','جسم شفاف باشد','هوا سرد باشد'],'نور در خط مستقیم حرکت می‌کند.'],['در زنجیرهٔ غذایی، تولیدکننده کدام است؟','گیاه',['شیر','گرگ','عقاب'],'گیاه با نور خورشید غذا می‌سازد.'],['ابرها از چه چیزی ساخته شده‌اند؟','قطره‌های ریز آب',['خاک','دود','باد'],'بخار آب بالا می‌رود و سرد می‌شود.']],
+5:[['برای جدا کردن شن از آب کدام روش مناسب است؟','صاف کردن',['تبخیر','آهنربا','الک'],'از صافی استفاده می‌کنیم.'],['نمک را از آب نمک با کدام روش جدا می‌کنیم؟','تبخیر',['صاف کردن','آهنربا','الک'],'آب بخار می‌شود و نمک می‌ماند.'],['کدام جسم رسانای جریان برق است؟','سیم مسی',['چوب','پلاستیک','شیشه'],'فلزها رسانا هستند.'],['در مدار الکتریکی ساده، کدام وسیله انرژی را تأمین می‌کند؟','باتری',['لامپ','سیم','کلید'],'منبع انرژی مدار است.'],['غذا بعد از دهان وارد کدام عضو می‌شود؟','مری',['معده','روده','کبد'],'لولهٔ باریکی که به معده می‌رود.'],['کدام عضو خون را در بدن پمپ می‌کند؟','قلب',['شش','کبد','کلیه'],'با تپش خود کار می‌کند.'],['وقتی نور به آینه می‌تابد چه می‌شود؟','بازتاب می‌شود',['جذب کامل می‌شود','از آن عبور می‌کند','خاموش می‌شود'],'پرتو نور برمی‌گردد.'],['انتقال گرما از راه تماس در فلزها را چه می‌نامند؟','رسانش',['همرفت','تابش','انجماد'],'قاشق در چای داغ گرم می‌شود.'],['کدام سیاره به «سیارهٔ سرخ» معروف است؟','مریخ',['زهره','زحل','تیر'],'رنگ سرخ آن مشهور است.'],['بزرگ‌ترین سیارهٔ منظومهٔ شمسی کدام است؟','مشتری',['زمین','تیر','مریخ'],'یک غول گازی است.']],
+6:[['لایهٔ بیرونی زمین چه نام دارد؟','پوسته',['گوشته','هستهٔ بیرونی','هستهٔ درونی'],'ما روی این لایه زندگی می‌کنیم.'],['در ماه‌گرفتگی، کدام جرم بین خورشید و ماه قرار می‌گیرد؟','زمین',['مریخ','ستاره','سیارک'],'ماه در سایهٔ زمین قرار می‌گیرد.'],['در فتوسنتز گیاه کدام گاز را تولید می‌کند؟','اکسیژن',['کربن دی‌اکسید','نیتروژن','هیدروژن'],'ما برای تنفس به آن نیاز داریم.'],['گیاه برای فتوسنتز به کدام انرژی نیاز دارد؟','نور خورشید',['باد','صدا','برق'],'به سبزینهٔ برگ می‌تابد.'],['خون پر از اکسیژن از کدام اندام به قلب برمی‌گردد؟','شش‌ها',['مغز','معده','کبد'],'اکسیژن از هوا گرفته می‌شود.'],['کدام یک منبع انرژی تجدیدپذیر است؟','باد',['نفت','زغال‌سنگ','گاز طبیعی'],'هیچ‌وقت تمام نمی‌شود.'],['زمین‌لرزه در اثر حرکت چه چیزی ایجاد می‌شود؟','صفحه‌های سنگی زمین',['ابرها','اقیانوس‌ها','ماه'],'در محل گسل‌ها رخ می‌دهد.'],['کدام یک تغییر شیمیایی است؟','سوختن کاغذ',['ذوب شدن یخ','خرد کردن چوب','حل شدن شکر'],'ماده‌ای تازه به وجود می‌آید.'],['کدام دستگاه بدن اکسیژن را وارد خون می‌کند؟','تنفس',['گوارش','دفع','عصبی'],'شش‌ها جزو این دستگاه‌اند.'],['جذب بیشتر مواد غذایی در کدام اندام است؟','روده باریک',['معده','مری','دهان'],'لولهٔ دراز و پیچ‌خورده.']]};
+const MPS={4:'یخ-ذوب,بخار-چگالش,جمجمه-مغز,دنده-قلب,آهنربا-آهن,ریشه-جذب آب',5:'باتری-انرژی مدار,سیم مسی-رسانا,چوب-نارسانا,مری-لولهٔ غذا,قلب-پمپ خون,آینه-بازتاب',6:'پوسته-لایهٔ بیرونی,باد-تجدیدپذیر,نفت-پایان‌پذیر,برگ-فتوسنتز,روده باریک-جذب غذا,ماه‌گرفتگی-سایهٔ زمین'};
+const SS={4:[[['جامد',['سنگ','یخ','چوب','کتاب','میخ','مداد']],['مایع',['آب','شیر','روغن','نوشابه','چای','عسل']]]],5:[[['رسانا',['سیم مسی','میخ آهنی','سکه','فویل','قاشق فلزی','زنجیر فلزی']],['نارسانا',['چوب','پلاستیک','شیشه','لاستیک','کاغذ','پارچه']]]],6:[[['تجدیدپذیر',['باد','خورشید','آب روان','زمین‌گرمایی','امواج دریا','زیست‌توده']],['پایان‌پذیر',['نفت','زغال‌سنگ','گاز طبیعی','بنزین','گازوئیل','نفت سفید']]]]};
+
+/* phase 5: new characters, skins, per-grade content */
+const K4='stroke="#3b1f7a" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"';
+function gl2(p){const u=p==='think'?[5,-5]:p==='sad'?[0,4]:[0,0];
+ const m=p==='happy'?`<path d="M54 100Q80 140 106 100Z" fill="#f2506b" ${K4}/><path d="M66 118Q80 108 94 118Q80 128 66 118Z" fill="#ff8fc7"/><path d="M68 101h8v6h-8zM84 101h8v6h-8z" fill="#fff"/>`
+ :p==='sad'?`<path d="M60 122Q80 102 100 122" fill="none" ${K4} stroke-width="5"/><path class="tear" d="M110 94q-7 11 0 15q7-4 0-15z" fill="#4da3ff" ${K4}/>`
+ :p==='think'?`<ellipse cx="88" cy="114" rx="6" ry="7" fill="#3b1f7a"/><circle cx="132" cy="26" r="14" fill="#ffd93d" ${K4}/><text x="132" y="33" font-size="20" font-weight="800" text-anchor="middle" fill="#3b1f7a">?</text>`
+ :`<path d="M56 104Q80 128 104 104" fill="none" ${K4} stroke-width="5"/><path d="M72 114h6v6h-6z" fill="#fff"/>`;
+ const br=p==='sad'?`<path d="M48 58L72 50M112 58L88 50" ${K4}/>`:p==='think'?`<path d="M50 56Q62 48 74 56M88 48Q98 42 110 50" fill="none" ${K4}/>`:'';
+ const ey=x=>`<g class="eye" style="transform-origin:${x}px 76px"><circle cx="${x}" cy="76" r="16" fill="#fff" ${K4}/><circle cx="${x+u[0]}" cy="${76+u[1]}" r="7" fill="#3b1f7a"/><circle cx="${x-2+u[0]}" cy="${73+u[1]}" r="2.5" fill="#fff"/></g>`;
+ return `<svg viewBox="0 0 160 160"><g class="ant"><path d="M62 36Q54 22 52 12M98 36Q106 22 108 12" fill="none" ${K4} stroke-width="5"/><circle class="ab" cx="52" cy="11" r="8" fill="#ffd93d" ${K4}/><circle class="ab b2" cx="108" cy="11" r="8" fill="#ffd93d" ${K4}/></g><path d="M40 138q-5 16 2 18q7-2 3-18zM76 140q-5 16 2 18q7-2 3-18zM112 138q-5 14 2 16q6-2 3-16z" fill="#3ecf6e" ${K4}/><g class="arm l" style="transform-origin:22px 104px"><ellipse cx="14" cy="104" rx="10" ry="16" transform="rotate(-20 14 104)" fill="#3ecf6e" ${K4}/></g><g class="arm" style="transform-origin:138px 104px"><ellipse cx="146" cy="104" rx="10" ry="16" transform="rotate(20 146 104)" fill="#3ecf6e" ${K4}/></g><g class="body"><path d="M20 122C10 72 40 30 80 30S150 72 140 122C138 142 120 148 80 148S22 142 20 122Z" fill="#3ecf6e" ${K4} stroke-width="5"/><ellipse cx="50" cy="52" rx="12" ry="7" transform="rotate(-30 50 52)" fill="#fff" opacity=".55"/><circle cx="34" cy="116" r="7" fill="#1f8f47"/><circle cx="128" cy="122" r="9" fill="#1f8f47"/><circle cx="42" cy="94" r="6" fill="#ff8fc7" opacity=".85"/><circle cx="118" cy="94" r="6" fill="#ff8fc7" opacity=".85"/>${ey(62)}${ey(98)}${br}${m}</g></svg>`}
+function pp2(p){let b='',fr='';for(let i=0;i<8;i++){b+=`<ellipse cx="80" cy="26" rx="15" ry="24" transform="rotate(${i*45+22} 80 60)" fill="#e0559f" ${K4}/>`;fr+=`<ellipse cx="80" cy="30" rx="13" ry="21" transform="rotate(${i*45} 80 60)" fill="#ff8fc7" ${K4}/>`}
+ const y=p==='sad'?60:57,ey=x=>`<g class="eye" style="transform-origin:${x}px ${y}px"><circle cx="${x}" cy="${y}" r="5" fill="#3b1f7a"/><circle cx="${x-1.5}" cy="${y-2}" r="1.8" fill="#fff"/></g>`;
+ const e=p==='happy'?`<path d="M63 58q7-9 14 0M83 58q7-9 14 0" fill="none" ${K4}/>`:ey(70)+ey(90)+`<path d="M62 51l-4-3M98 51l4-3" ${K4} stroke-width="3"/>`;
+ const m=p==='happy'?`<path d="M67 70Q80 86 93 70Z" fill="#f2506b" ${K4} stroke-width="3"/>`:p==='sad'?`<path d="M70 77Q80 67 90 77" fill="none" ${K4}/>`:p==='think'?`<circle cx="84" cy="72" r="4" fill="#3b1f7a"/><circle cx="140" cy="18" r="13" fill="#ffd93d" ${K4}/><text x="140" y="25" font-size="19" font-weight="800" text-anchor="middle" fill="#3b1f7a">?</text>`:`<path d="M70 70Q80 80 90 70" fill="none" ${K4}/>`;
+ return `<svg viewBox="0 0 160 160"><path d="M80 108Q70 132 80 156" fill="none" stroke="#1f8f47" stroke-width="9" stroke-linecap="round"/><g class="lf" style="transform-origin:80px 140px"><path d="M80 140Q48 118 34 134Q54 154 80 140Z" fill="#3ecf6e" ${K4}/></g><g class="lf r" style="transform-origin:80px 130px"><path d="M80 130Q112 108 126 124Q106 144 80 130Z" fill="#3ecf6e" ${K4}/></g><g class="pet">${b}${fr}</g><circle cx="80" cy="60" r="27" fill="#ffd93d" ${K4}/><circle cx="62" cy="68" r="5" fill="#ff8fc7" opacity=".9"/><circle cx="98" cy="68" r="5" fill="#ff8fc7" opacity=".9"/>${e}${m}</svg>`}
+const SK={crown:['g','تاج',100,20,OUT.crown[3]],hat:['g','کلاه جشن',60,12,OUT.hat[3]],
+cap:['g','کلاه بیسبال',60,12,`<path d="M40 52Q44 22 80 20Q116 22 120 52Z" fill="#4da3ff" ${OK}/><path d="M110 50H146Q146 62 130 62H110Z" fill="#2a6fd1" ${OK}/><circle cx="80" cy="20" r="5" fill="#f2506b" ${OK}/>`],
+sun:['g','عینک آفتابی',100,20,`<path d="M44 66H116V80Q116 94 100 94Q86 94 84 80H76Q74 94 60 94Q44 94 44 80Z" fill="#3b1f7a" ${OK}/><path d="M50 72H62" stroke="#fff" stroke-width="3" stroke-linecap="round"/>`],
+mus:['g','سبیل',60,12,`<path d="M54 100Q66 88 80 98Q94 88 106 100Q96 110 80 104Q64 110 54 100Z" fill="#6a3fd6" ${OK}/>`],
+wiz:['g','کلاه جادوگر',160,32,`<path d="M36 46Q80 36 124 46Q80 58 36 46Z" fill="#6a3fd6" ${OK}/><path d="M54 44L84 2L106 44Z" fill="#9b6bff" ${OK}/><circle cx="82" cy="28" r="5" fill="#ffd93d"/>`],
+nose:['g','دماغ دلقک',60,12,`<circle cx="80" cy="92" r="9" fill="#f2506b" ${OK}/><circle cx="77" cy="89" r="2.5" fill="#fff"/>`],
+tie:['g','پاپیون',100,20,`<path d="M80 138L58 128V150ZM80 138L102 128V150Z" fill="#f2506b" ${OK}/><circle cx="80" cy="139" r="6" fill="#ffd93d" ${OK}/>`],
+scf:['g','شال‌گردن',100,20,`<path d="M30 122Q80 142 130 122L128 136Q80 156 32 136Z" fill="#ff8fc7" ${OK}/><path d="M108 138L116 158L100 156Z" fill="#f2506b" ${OK}/>`],
+chef:['g','کلاه آشپز',160,32,`<g fill="#fff" ${OK}><circle cx="62" cy="26" r="16"/><circle cx="80" cy="18" r="18"/><circle cx="98" cy="26" r="16"/><rect x="56" y="30" width="48" height="18" rx="3"/></g>`],
+phn:['g','هدفون',100,20,`<path d="M26 84Q26 20 80 20Q134 20 134 84" fill="none" stroke="#9b6bff" stroke-width="8" stroke-linecap="round"/><rect x="12" y="76" width="18" height="34" rx="8" fill="#f2506b" ${OK}/><rect x="130" y="76" width="18" height="34" rx="8" fill="#f2506b" ${OK}/>`],
+mask:['g','ماسک قهرمان',100,20,`<path d="M38 70Q80 54 122 70V88Q104 96 92 84Q80 92 68 84Q56 96 38 88Z" fill="#f2506b" ${OK}/><circle cx="62" cy="76" r="11" fill="#fff" ${OK}/><circle cx="98" cy="76" r="11" fill="#fff" ${OK}/><circle cx="62" cy="77" r="5" fill="#3b1f7a"/><circle cx="98" cy="77" r="5" fill="#3b1f7a"/>`],
+flw:['g','تاج گل',60,12,`<path d="M34 46Q80 20 126 46" fill="none" stroke="#3ecf6e" stroke-width="6"/>${[[44,44,'#ff8fc7'],[64,32,'#ffd93d'],[80,28,'#f2506b'],[96,32,'#ffd93d'],[116,44,'#ff8fc7']].map(a=>`<circle cx="${a[0]}" cy="${a[1]}" r="8" fill="${a[2]}" ${OK}/>`).join('')}`],
+ptc:['g','دزد دریایی',160,32,`<path d="M32 58Q60 54 98 76M98 76Q122 66 132 60" fill="none" stroke="#3b1f7a" stroke-width="5"/><circle cx="98" cy="76" r="16" fill="#3b1f7a" ${OK}/>`],
+bow:['p','پاپیون',60,12,OUT.bow[3]],gls:['p','عینک',100,20,OUT.gls[3]],
+str:['p','کلاه حصیری',100,20,`<ellipse cx="80" cy="28" rx="52" ry="12" fill="#ffd93d" ${OK}/><path d="M56 26Q56 2 80 2Q104 2 104 26Z" fill="#ffd93d" ${OK}/><path d="M57 21H103" stroke="#f2506b" stroke-width="7"/>`],
+scp:['p','شال',60,12,`<path d="M64 122Q80 132 96 122L96 134Q80 144 64 134Z" fill="#9b6bff" ${OK}/><path d="M90 138L98 154L84 150Z" fill="#9b6bff" ${OK}/>`],
+bfl:['p','پروانه',100,20,`<g transform="translate(122 30)"><g class="fl"><path d="M0 0Q-18 -16 -14 4Q-16 14 0 4ZM0 0Q18 -16 14 4Q16 14 0 4Z" fill="#4da3ff" ${OK}/></g></g>`],
+hrt:['p','عینک قلبی',100,20,`<path d="M71 68Q58 58 60 51Q64 44 71 52Q78 44 82 51Q84 58 71 68Z" fill="#f2506b" fill-opacity=".75" ${OK}/><path d="M89 68Q76 58 78 51Q82 44 89 52Q96 44 100 51Q102 58 89 68Z" fill="#f2506b" fill-opacity=".75" ${OK}/>`],
+tia:['p','تاج پرنسس',160,32,`<path d="M56 18L62 2L72 12L80 0L88 12L98 2L104 18Z" fill="#ffd93d" ${OK}/><circle cx="80" cy="9" r="3" fill="#f2506b"/>`],
+spk:['p','ستاره‌های درخشان',60,12,[[20,30],[140,40],[28,120],[134,110]].map(([x,y])=>`<path class="sp" d="M${x} ${y-9}L${x+3} ${y-3}L${x+9} ${y}L${x+3} ${y+3}L${x} ${y+9}L${x-3} ${y+3}L${x-9} ${y}L${x-3} ${y-3}Z" fill="#ffd93d" ${OK}/>`).join('')]};
+const tot=()=>Object.values(S.pr||{}).reduce((a,p)=>a+(p.s||[]).reduce((x,y)=>x+(y||0),0),0),avs=()=>tot()-(S.sp||0);
+const addS=(s,k)=>k&&SK[k]?s.replace('</svg>',SK[k][4]+'</svg>'):s;let shT='g';
+gl=p=>addS(gl2(p),(S.wear||{}).g);pp=p=>addS(pp2(p),(S.wear||{}).p);
+function drawShop(){const o=S.own||[],w=S.wear||{};$('shp').innerHTML=`<div class="row"><span class="coin">${f(avs())} ★</span><span class="coin">${f(S.coins||0)} سکه</span></div><div class="tabs"><button class="gr ${shT==='g'?'sel':''}" data-tab="g">گلوبی</button><button class="gr ${shT==='p'?'sel':''}" data-tab="p">پاپی</button></div><div class="cg">${Object.keys(SK).filter(k=>SK[k][0]===shT).map(k=>{const[t,n,c,st]=SK[k],has=o.includes(k),on=w[t]===k;return`<div class="cd"><div class="ch">${addS((t==='g'?gl2:pp2)('idle'),k)}</div>${n}${has?`<button class="sb" data-k="${k}" data-m="w">${on?'درآوردن':'پوشیدن'}</button>`:`<div class="row"><button class="sb" data-k="${k}" data-m="c">${f(c)} سکه</button><button class="sb y" data-k="${k}" data-m="s">${f(st)} ★</button></div>`}</div>`}).join('')}</div>`}
+$('shp').onclick=e=>{const tb=e.target.closest('[data-tab]');if(tb){shT=tb.dataset.tab;snd('click');return drawShop()}const b=e.target.closest('[data-k]');if(!b)return;const k=b.dataset.k,m=b.dataset.m,[t,,c,st]=SK[k];S.own=S.own||[];S.wear=S.wear||{};
+ if(m==='w'){S.wear[t]=S.wear[t]===k?null:k;snd('click')}
+ else if(m==='c'&&(S.coins||0)>=c){S.coins-=c;S.own.push(k);S.wear[t]=k;snd('win')}
+ else if(m==='s'&&avs()>=st){S.sp=(S.sp||0)+st;S.own.push(k);S.wear[t]=k;snd('win')}
+ else{snd('bad');b.textContent='کم داری!';return}save();drawShop()};
+$('hm').onclick=()=>{snd('click');go('map')};
+const QG={3:{4:[['به محل زندگی با مزرعه و باغ که کوچک‌تر از شهر است چه می‌گویند؟','روستا',['استان','کشور','قاره'],'مردمش بیشتر کشاورزی می‌کنند.'],['جهت‌های اصلی کدام‌اند؟','شمال و جنوب و شرق و غرب',['بالا و پایین','سرد و گرم','چپ و راست'],'روی نقشه و قطب‌نما دیده می‌شوند.'],['کدام وسیله جهت‌ها را نشان می‌دهد؟','قطب‌نما',['خط‌کش','ترازو','ساعت'],'عقربه‌اش شمال را نشان می‌دهد.'],['پایتخت ایران کجاست؟','تهران',['شیراز','تبریز','اصفهان'],'بزرگ‌ترین شهر ایران است.'],['خورشید از کدام جهت طلوع می‌کند؟','شرق',['غرب','شمال','جنوب'],'غروبش در غرب است.']],
+5:[['ایران در کدام قاره قرار دارد؟','آسیا',['اروپا','آفریقا','استرالیا'],'بزرگ‌ترین قارهٔ جهان.'],['کدام دریا در شمال ایران است؟','خزر',['عمان','مدیترانه','سرخ'],'بزرگ‌ترین دریاچهٔ جهان.'],['کدام دریا در جنوب ایران است؟','عمان',['خزر','سیاه','مدیترانه'],'کنار خلیج فارس است.'],['بلندترین قلهٔ ایران کدام است؟','دماوند',['سبلان','الوند','زردکوه'],'در رشته‌کوه البرز است.'],['تخت جمشید یادگار کدام حکومت است؟','هخامنشیان',['ساسانیان','اشکانیان','صفویان'],'کوروش و داریوش.']],
+6:[['کدام قاره بیشترین جمعیت را دارد؟','آسیا',['اروپا','آفریقا','استرالیا'],'ایران هم در این قاره است.'],['سازمان ملل برای چه ساخته شد؟','حفظ صلح جهان',['ساخت جاده','فروش کالا','برگزاری مسابقه'],'کشورها در آن گفتگو می‌کنند.'],['کوروش بزرگ بنیان‌گذار کدام حکومت بود؟','هخامنشیان',['ساسانیان','اشکانیان','قاجار'],'حدود ۲۵۰۰ سال پیش.'],['بزرگ‌ترین اقیانوس جهان کدام است؟','آرام',['اطلس','هند','منجمد شمالی'],'اسمش از آرامش می‌آید.'],['حق آموزش و بهداشت جزو کدام است؟','حقوق شهروندی',['بازی','ورزش','سفر'],'حقوق همهٔ مردم یک کشور.']]},
+4:{4:[['در سفرهٔ هفت‌سین کدام یک هست؟','سیب',['موز','پرتقال','هلو'],'با حرف «س» شروع می‌شود.'],['کدام رنگ از رنگ‌های اصلی است؟','قرمز',['سبز','نارنجی','بنفش'],'اصلی‌ها: قرمز، آبی، زرد.'],['نوروز از چه روزی شروع می‌شود؟','اول فروردین',['اول مهر','اول دی','اول تیر'],'اول بهار.'],['کدام ساز ایرانی با مضراب نواخته می‌شود؟','سنتور',['نی','دف','کمانچه'],'دو مضراب دارد.'],['شاهنامه را چه کسی سرود؟','فردوسی',['سعدی','حافظ','مولوی'],'حدود هزار سال پیش.']],
+5:[['ترکیب زرد و آبی چه رنگی می‌سازد؟','سبز',['بنفش','نارنجی','قرمز'],'مثل برگ درخت.'],['ترکیب قرمز و آبی چه رنگی می‌سازد؟','بنفش',['سبز','نارنجی','زرد'],'مثل رنگ بنفشه.'],['رستم پسر کدام پهلوان بود؟','زال',['سهراب','سیاوش','کیکاووس'],'زال سپیدمو.'],['نقش بته‌جقه روی چه چیزی زیاد دیده می‌شود؟','ترمه',['شیشه','کاغذ','سنگ'],'روی پارچه‌های سنتی.'],['میدان نقش جهان در کدام شهر است؟','اصفهان',['تبریز','مشهد','کرمان'],'به «نصف جهان» معروف است.']],
+6:[['«گلستان» و «بوستان» را چه کسی نوشت؟','سعدی',['حافظ','فردوسی','مولوی'],'اهل شیراز.'],['دیوان غزل‌های «لسان‌الغیب» از کیست؟','حافظ',['سعدی','فردوسی','نظامی'],'او هم شیرازی است.'],['شاهنامه حدود چند سال پیش سروده شد؟','هزار سال',['صد سال','پنجاه سال','ده سال'],'فردوسی آن را در سی سال سرود.'],['کدام خط «عروس خطوط ایرانی» نام دارد؟','نستعلیق',['کوفی','ثلث','نسخ'],'خطی زیبا و روان.'],['«تعزیه» چه نوع هنری است؟','نمایش سنتی',['نقاشی','معماری','سفالگری'],'نمایش آیینی ایرانی.']]}};
+/* phase 6: Quran, English, 60 stages, 6 bosses, purple boss */
+W.push({n:'قرآن',c:'--p',d:'--pd',s:'ق'},{n:'انگلیسی',c:'--b',d:'--bd',s:'E'});
+GL[5]=['quiz','tf','mem','quiz','tf','mem','quiz','tf','mem'];GL[6]=['quiz','tf','mem','sort','quiz','tf','mem','sort','quiz'];
+SORT[6]=[[['حیوان',['cat','dog','fish','bird','horse','cow']],['میوه',['apple','banana','orange','grape','lemon','peach']]]];
+QG[5]={4:[['قرآن کتاب آسمانی کدام دین است؟','اسلام',['مسیحیت','یهودیت','زرتشت'],'مسلمانان آن را می‌خوانند.'],['اولین سورهٔ قرآن چه نام دارد؟','حمد',['ناس','کوثر','علق'],'به آن «فاتحه» هم می‌گویند.'],['زبان قرآن چیست؟','عربی',['فارسی','انگلیسی','ترکی'],'قرآن به این زبان نازل شده.'],['قرآن بر کدام پیامبر نازل شد؟','حضرت محمد (ص)',['حضرت موسی (ع)','حضرت عیسی (ع)','حضرت نوح (ع)'],'پیامبر آخر.'],['قبل از خواندن سوره‌ها چه می‌گوییم؟','بسم‌الله الرحمن الرحیم',['الحمدلله','سبحان‌الله','الله‌اکبر'],'به نام خداوند بخشندهٔ مهربان.']],
+5:[['قرآن چند سوره دارد؟','۱۱۴',['۱۰۰','۱۲۰','۹۹'],'عددی بعد از ۱۱۳.'],['آخرین سورهٔ قرآن کدام است؟','ناس',['حمد','کوثر','فلق'],'اسمش به معنی «مردم» است.'],['کوتاه‌ترین سورهٔ قرآن کدام است؟','کوثر',['حمد','ناس','توحید'],'سه آیه دارد.'],['فرشتهٔ آورندهٔ وحی کیست؟','جبرئیل',['میکائیل','اسرافیل','عزرائیل'],'امین وحی.'],['اولین سورهٔ نازل‌شده بر پیامبر کدام است؟','علق',['حمد','ناس','بقره'],'با «اقرأ» شروع می‌شود.']],
+6:[['سورهٔ توحید دربارهٔ چیست؟','یکتایی خدا',['نماز','روزه','حج'],'«قل هو الله احد».'],['سورهٔ حمد چند آیه دارد؟','۷',['۳','۵','۱۰'],'هفت آیه.'],['قرآن در کدام ماه نازل شد؟','رمضان',['محرم','رجب','شعبان'],'ماه روزه.'],['بخش‌های قرآن را چه می‌نامند؟','سوره',['فصل','بند','درس'],'مثل بقره و حمد.'],['بزرگ‌ترین سورهٔ قرآن کدام است؟','بقره',['حمد','ناس','کوثر'],'اسمش به معنی «گاو» است.']]};
+QG[6]={4:[['معنی «apple» چیست؟','سیب',['موز','پرتقال','انار'],'میوهٔ گرد و قرمز.'],['«cat» یعنی چه؟','گربه',['سگ','ماهی','پرنده'],'میو می‌کند.'],['«red» چه رنگی است؟','قرمز',['آبی','سبز','زرد'],'رنگ انار.'],['عدد «three» کدام است؟','۳',['۲','۵','۸'],'one, two, three.'],['«book» یعنی چه؟','کتاب',['مداد','میز','در'],'می‌خوانیمش.']],
+5:[['«Monday» کدام روز هفته است؟','دوشنبه',['شنبه','چهارشنبه','جمعه'],'بعد از Sunday می‌آید.'],['«mother» یعنی چه؟','مادر',['پدر','خواهر','برادر'],'father یعنی پدر.'],['«eye» یعنی کدام عضو بدن؟','چشم',['گوش','دهان','دست'],'با آن می‌بینیم.'],['ضد «big» کدام است؟','small',['tall','fast','hot'],'ضد بزرگ، کوچک است.'],['«January» کدام ماه میلادی است؟','ژانویه',['مارس','ژوئن','دسامبر'],'اولین ماه میلادی.']],
+6:[['جملهٔ درست کدام است؟','I am a student.',['I is a student.','I are a student.','Me am student.'],'با I از am استفاده می‌کنیم.'],['She ... a book.','reads',['read','reading','readed'],'برای she فعل s می‌گیرد.'],['«under» یعنی چه؟','زیر',['روی','کنار','پشت'],'on یعنی روی.'],['معنی «happy» کدام است؟','خوشحال',['غمگین','خسته','گرسنه'],'ضدش sad است.'],['به «How are you?» چه جوابی می‌دهیم؟','I am fine, thank you.',['I am ten.','My name is Ali.','It is red.'],'وقتی حالمان را می‌پرسند.']]};
+const MPE={5:{4:'قرآن-کتاب خدا,حمد-سورهٔ اول,ناس-سورهٔ آخر,جبرئیل-فرشتهٔ وحی,محمد-پیامبر اسلام,رمضان-ماه قرآن',5:'کوثر-کوتاه‌ترین سوره,علق-اولین سورهٔ نازل‌شده,بسم‌الله-آغاز سوره‌ها,توحید-یکتایی خدا,عربی-زبان قرآن,۱۱۴-تعداد سوره‌ها',6:'فاتحه-سورهٔ نماز,اخلاص-سورهٔ توحید,آیه-بخش سوره,سوره-بخش قرآن,تلاوت-خواندن قرآن,تدبر-فکر در قرآن'},6:{4:'cat-گربه,dog-سگ,red-قرمز,blue-آبی,book-کتاب,apple-سیب',5:'mother-مادر,father-پدر,eye-چشم,Monday-دوشنبه,big-بزرگ,small-کوچک',6:'under-زیر,on-روی,happy-خوشحال,sad-غمگین,read-خواندن,write-نوشتن'}};
+const engOK=()=>(((S.pr||{})['1-'+S.grade]||{s:[]}).s[9]||0)>0;
+const _dm3=drawMap;drawMap=function(){_dm3();const c=document.querySelectorAll('#mp .w')[6];if(c&&!engOK()){c.classList.add('lk');c.querySelector('small').textContent='قفل: باس اول ریاضی'}};
+$('mp').onclick=e=>{const b=e.target.closest('.w');if(!b)return;const i=+b.dataset.i;if(i===6&&!engOK()){snd('bad');b.querySelector('small').textContent='اول باس ریاضی رو شکست بده!';return}wi=i;snd('click');go('world')};
+function bossTop(){const h=Math.max(G.hp,0),mx=G.mx||3;$('gtop').innerHTML=`<div class="ch bossc" style="width:200px;height:200px;margin:0 auto">${gl2(h<mx?'sad':'think').replaceAll('#3ecf6e','#9b6bff').replaceAll('#1f8f47','#6a3fd6')}</div><div class="trk"><span>جان باس</span><div><i style="width:${(G.N-G.p)*100/G.N}%;background:var(--v)"></i></div></div><div class="tm"><i id="tb"></i></div><b style="color:var(--r);font-size:1.4rem">${'♥'.repeat(h)}${'♡'.repeat(mx-h)}</b><div class="row"><button class="sb y" id="h1">پاپی: حذف دو جواب (${f(G.h1)})</button><button class="sb" id="h2">پاپی: قلب (${f(G.h2)})</button></div>`;
+ $('h1').onclick=()=>{if(G.h1<1||G.lock)return;const c=G.q[G.k];[...document.querySelectorAll('[data-v]')].filter(x=>x.dataset.v!==c.a&&!x.disabled).slice(0,2).forEach(x=>{x.disabled=true;x.classList.add('no')});G.h1--;snd('ok');gsay('پاپی دو جواب غلط رو برداشت!','happy');bossTop()};
+ $('h2').onclick=()=>{if(G.h2<1||G.hp>=mx||G.lock)return;G.hp++;G.h2--;snd('ok');gsay('پاپی یه قلب بهت داد!','happy');bossTop()}}
+function cutscene(done){const g=G,fd=['#f2506b','#ffd93d','#ff8fc7','#4da3ff'];$('gtop').innerHTML='';$('gb').onclick=null;
+ $('gb').innerHTML=`<div class="stage"><div class="gg">${gl2('happy')}</div><div class="gg pu">${gl2('happy').replaceAll('#3ecf6e','#9b6bff').replaceAll('#1f8f47','#6a3fd6')}</div>${fd.map((c,i)=>`<i class="fd" style="background:${c};--x:${[-110,110,-90,90][i]}px;animation-delay:${.3+i*.8}s"></i>`).join('')}</div><button class="lnk" id="sk">رد کردن</button>`;
+ gsay('گلوبی خیلی گرسنه است...','think');let ok=0;const go2=()=>{if(ok||G!==g||cur!=='game')return;ok=1;done()};
+ [1,1.8,2.6,3.4].forEach(t=>setTimeout(()=>{if(!ok&&G===g)snd('click')},t*1000));
+ setTimeout(()=>{if(!ok&&G===g)gsay('وای! داره غول بنفش می‌شه!','sad')},2700);setTimeout(go2,4400);$('sk').onclick=go2}
+
+/* phase 7: advanced math (6th grade), question generators */
+const MX=i=>i===5?10:i===7?30:60;
+W.push({n:'ریاضی پیشرفته',c:'--r',d:'--rd',s:'π'});GL[7]=['quiz','bub','quiz','bub','quiz','bub','quiz','bub','quiz'];
+const gcd=(a,b)=>b?gcd(b,a%b):a;
+const AD=[l=>{const a=R(2,9),d=R(2,4+(l>>2)),t=R(0,2);let s,n;if(t===0){s=[0,1,2,3].map(k=>a+k*d);n=a+4*d}else if(t===1){const r=R(2,3);s=[a,a*r,a*r*r,a*r**3];n=a*r**4}else{s=[a];for(let k=0;k<3;k++)s.push(s[k]*2+1);n=s[3]*2+1}return[`عدد بعدی دنباله: ${s.map(f).join('، ')}، ؟`,n,'تفاضل یا نسبت عددها رو پیدا کن.']},
+l=>{const k=R(2,9),x=k*R(2,7),y=k*R(2,7+(l>>3));if(x===y)return AD[0](l);return R(0,1)?[`ب.م.م ${f(x)} و ${f(y)} چند است؟`,gcd(x,y),'بزرگ‌ترین عددی که هر دو بر آن بخش‌پذیرند.']:[`ک.م.م ${f(x)} و ${f(y)} چند است؟`,x*y/gcd(x,y),'کوچک‌ترین مضرب مشترک.']},
+l=>{const k=R(2,5),s=R(5,15)+(l>>2);return[`پدر ${f(k)} برابر سن پسرش است و مجموع سن‌هایشان ${f((k+1)*s)} سال است. پسر چند ساله است؟`,s,'مجموع = (ضریب + ۱) × سن پسر.']},
+l=>{const n=R(10,30+l*2);return[`مجموع عددهای ۱ تا ${f(n)} چند است؟`,n*(n+1)/2,'اولی و آخری را جفت کن.']},
+l=>{const n=R(4,10+(l>>2));return[`${f(n)} نفر هر دو به دو با هم دست می‌دهند. چند دست‌دادن انجام می‌شود؟`,n*(n-1)/2,'تکراری‌ها را حذف کن.']},
+l=>{const k=R(3,9),m=R(50,150+l);return[`بین ۱ تا ${f(m)} چند مضرب ${f(k)} وجود دارد؟`,Math.floor(m/k),'عدد را بر مضرب تقسیم کن.']},
+l=>{const a=R(3,9)*10,b=R(3,9)*10,t=R(2,5);return[`دو ماشین از دو شهر به فاصلهٔ ${f((a+b)*t)} کیلومتر با سرعت ${f(a)} و ${f(b)} کیلومتر بر ساعت به سوی هم می‌روند. بعد از چند ساعت به هم می‌رسند؟`,t,'سرعت‌ها را جمع کن.']},
+l=>{const M=6*R(2,20);return[`علی ${f(M)} هزار تومان داشت. نصف آن را خرج کرد و بعد یک‌سوم باقی‌مانده را. چند هزار تومان دارد؟`,M/3,'اول نصف، بعد یک‌سوم باقی‌مانده.']},
+l=>{const s=R(3,15+(l>>1));return[`محیط یک مربع ${f(4*s)} است. مساحتش چند است؟`,s*s,'اول ضلع را پیدا کن.']},
+l=>{const p=[10,20,25,50][R(0,3)],Wh=R(2,12)*20;return[`${f(p)}٪ یک عدد برابر ${f(p*Wh/100)} است. آن عدد چند است؟`,Wh,'درصد یعنی از صد.']},
+l=>{const d=R(3,9),n=R(100,500+l*10);return[`باقی‌مانده تقسیم ${f(n)} بر ${f(d)} چند است؟`,n%d,'تقسیم کن و باقی‌مانده را بنویس.']},
+l=>{const k=R(3,9);return[`چند عدد دو رقمی بر ${f(k)} بخش‌پذیرند؟`,Math.floor(99/k)-Math.floor(9/k),'مضرب‌ها از ۱۰ تا ۹۹.']}];
+function mqa(i){const[q,a,h]=AD[R(0,AD.length-1)](Math.min(i,29)),st=new Set([a]);while(st.size<4){const d=a+R(1,6)*(R(0,1)?1:-1)*(a>40?2:1);if(d>=0)st.add(d)}return{q,a:f(a),o:shuf([...st].map(f)),h}}
+const advOK=()=>S.grade===6&&((S.pr||{})['1-6']||{d:0}).d>=15;
+const _dm4=drawMap;drawMap=function(){_dm4();const c=document.querySelectorAll('#mp .w')[7];if(c){if(S.grade!==6)c.style.display='none';else if(!advOK()){c.classList.add('lk');c.querySelector('small').textContent='قفل: ۲۵٪ ریاضی'}}};
+$('mp').onclick=e=>{const b=e.target.closest('.w');if(!b)return;const i=+b.dataset.i;if(i===6&&!engOK()){snd('bad');b.querySelector('small').textContent='اول باس ریاضی رو شکست بده!';return}if(i===7&&!advOK()){snd('bad');b.querySelector('small').textContent='۲۵٪ مرحله‌های ریاضی رو تموم کن!';return}wi=i;snd('click');go('world')};
+/* generated vocabulary, synonyms, surahs */
+const EV={4:'cat|گربه,dog|سگ,fish|ماهی,bird|پرنده,apple|سیب,banana|موز,orange|پرتقال,red|قرمز,blue|آبی,green|سبز,yellow|زرد,one|یک,two|دو,three|سه,four|چهار,five|پنج,book|کتاب,pen|خودکار,door|در,house|خانه',5:'mother|مادر,father|پدر,sister|خواهر,brother|برادر,eye|چشم,ear|گوش,nose|بینی,hand|دست,foot|پا,school|مدرسه,teacher|معلم,friend|دوست,Monday|دوشنبه,Friday|جمعه,spring|بهار,summer|تابستان,winter|زمستان,big|بزرگ,small|کوچک,hot|گرم,cold|سرد',6:'read|خواندن,write|نوشتن,run|دویدن,eat|خوردن,drink|نوشیدن,sleep|خوابیدن,happy|خوشحال,sad|غمگین,tired|خسته,hungry|گرسنه,under|زیر,on|روی,in|داخل,behind|پشت,morning|صبح,night|شب,today|امروز,tomorrow|فردا,clean|تمیز,beautiful|زیبا'};
+[4,5,6].forEach(g=>MPE[6][g]=EV[g].replaceAll('|','-'));
+const vq=(L,n)=>{const P=L.split(',').map(x=>x.split('|'));return shuf(P).slice(0,n).map(([e,p])=>{const o=shuf(P.filter(x=>x[0]!==e));return R(0,1)?[`معنی «${e}» چیست؟`,p,o.slice(0,3).map(x=>x[1]),`حرف اول: ${e[0]}`]:[`«${p}» به انگلیسی چیست؟`,e,o.slice(0,3).map(x=>x[0]),`حرف اول: ${e[0]}`]})};
+const PS={4:{m:'زیبا|قشنگ,خانه|سرا,راه|جاده,دوست|رفیق,شاد|خوشحال,سریع|تند,پیر|سالخورده,جوان|برنا',z:'بلند|کوتاه,شب|روز,گرم|سرد,زیاد|کم,سبک|سنگین,باز|بسته,روشن|تاریک,تمیز|کثیف'},5:{m:'دانا|آگاه,سخن|حرف,پیروز|برنده,خورشید|مهر,چشم|دیده,آسمان|گردون,گفتن|سخن,بوستان|باغ',z:'آغاز|پایان,آسان|دشوار,دور|نزدیک,پنهان|آشکار,ارزان|گران,خوب|بد,امید|ناامیدی,پیر|جوان'},6:{m:'بزرگ|کلان,دانش|علم,بیم|ترس,رنج|سختی,کوشش|تلاش,همیشه|پیوسته,دلیر|شجاع,نیکو|خوب',z:'آزادی|اسارت,شادی|غم,دوستی|دشمنی,پیروزی|شکست,بلندی|پستی,روشنایی|تاریکی,دانایی|نادانی,آبادی|ویرانی'}};
+const pq=(g,n)=>{const out=[];[['مترادف',PS[g].m],['متضاد',PS[g].z]].forEach(([k,s])=>{const P=s.split(',').map(x=>x.split('|'));P.forEach(([a,b])=>out.push([`${k} «${a}» کدام است؟`,b,shuf(P.filter(x=>x[0]!==a)).slice(0,3).map(x=>x[1]),k==='مترادف'?'هم‌معنی می‌خواهیم.':'ضد و عکسش رو بگو.']))});return shuf(out).slice(0,n)};
+const SU=[[1,'حمد',4],[2,'بقره',5],[3,'آل‌عمران',6],[12,'یوسف',5],[18,'کهف',6],[36,'یس',5],[55,'الرحمن',6],[67,'ملک',6],[96,'علق',5],[103,'عصر',6],[108,'کوثر',4],[110,'نصر',6],[112,'اخلاص',4],[113,'فلق',5],[114,'ناس',4]];
+const surq=(g,n)=>{const L=SU.filter(x=>x[2]<=g);return shuf(L).slice(0,n).map(([k,m])=>{const o=shuf(L.filter(x=>x[1]!==m));return R(0,1)?[`سورهٔ شمارهٔ ${f(k)} کدام است؟`,m,o.slice(0,3).map(x=>x[1]),'شمارهٔ سوره‌ها از ۱ تا ۱۱۴ است.']:[`سورهٔ «${m}» چندمین سورهٔ قرآن است؟`,f(k),o.slice(0,3).map(x=>f(x[0])),'شمارهٔ سوره رو به یاد بیار.']})};
+const PL=w=>w===6?[...QG[6][S.grade],...vq(EV[S.grade],10)]:w===5?[...QG[5][S.grade],...surq(S.grade,8)]:w===2?SQ[S.grade]:QG[w][S.grade];
+SQ[4].push(['به تغییر حالت گاز به مایع چه می‌گویند؟','چگالش',['تبخیر','ذوب','انجماد'],'قطره‌های آب روی لیوان سرد.'],['کدام یک ماده‌ای جامد است؟','سنگ',['آب','هوا','شیر'],'شکل ثابتی دارد.'],['مفصل چه کاری انجام می‌دهد؟','اجازهٔ حرکت می‌دهد',['غذا هضم می‌کند','خون می‌سازد','نور می‌تاباند'],'مثل آرنج و زانو.'],['قطب شمال (N) آهنربا کدام قطب را می‌رباید؟','قطب جنوب (S)',['قطب شمال (N)','هر دو','هیچ‌کدام'],'قطب‌های ناهم‌نام می‌ربایند.'],['کدام جانور گیاه‌خوار است؟','گاو',['شیر','گرگ','عقاب'],'علف می‌خورد.']);
+SQ[5].push(['کدام وسیله جریان برق را قطع و وصل می‌کند؟','کلید',['باتری','لامپ','سیم'],'مثل کلید چراغ.'],['لولهٔ گوارش بعد از معده به کدام عضو می‌رسد؟','روده',['مری','دهان','نای'],'جذب غذا آنجا انجام می‌شود.'],['انتقال گرما در مایع‌ها و گازها چه نام دارد؟','همرفت',['رسانش','تابش','ذوب'],'جریان‌های گرم بالا می‌روند.'],['نور خورشید از چه راهی به ما می‌رسد؟','تابش',['رسانش','همرفت','چگالش'],'به ماده نیاز ندارد.'],['زمین چندمین سیارهٔ منظومهٔ شمسی است؟','سوم',['اول','دوم','چهارم'],'بعد از تیر و زهره.']);
+SQ[6].push(['سنگی که از سرد شدن مواد مذاب ساخته می‌شود چه نام دارد؟','آذرین',['رسوبی','دگرگونی','آهکی'],'از آتشفشان‌ها به‌وجود می‌آید.'],['کدام مورد در فتوسنتز مصرف می‌شود؟','آب',['اکسیژن','گلوکز','ماسه'],'ریشه آن را جذب می‌کند.'],['خون سیاه‌رگ‌ها بیشتر چه گازی دارد؟','کربن دی‌اکسید',['اکسیژن','هلیوم','نیتروژن'],'به سمت قلب برمی‌گردد.'],['ماه‌گرفتگی در کدام حالت ماه رخ می‌دهد؟','ماه کامل',['هلال','محاق','ماه نو'],'ماه در سایهٔ زمین قرار می‌گیرد.'],['کدام نمونه‌ای از انرژی صوتی است؟','موسیقی',['نور لامپ','گرمای آتش','باتری'],'با لرزش به گوش می‌رسد.']);
+
+/* init */
+$('s1').innerHTML=gl('happy');$('s2').innerHTML=pp('happy');$('pch').innerHTML=pp('think');$('pch').className='ch think';
+$('new').hidden=!S.name;if(S.name)$('go').textContent='ادامه بازی';upd();
+</script>
+</body>
+</html>
